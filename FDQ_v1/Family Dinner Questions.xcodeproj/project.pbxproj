@@ -1,0 +1,761 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C1417E41AF3FDDD0055D6DE /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1417E31AF3FDDD0055D6DE /* SettingsTableViewController.swift */; };
+		5C3AA4021AEF357C00787EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3AA4011AEF357C00787EA4 /* AppDelegate.swift */; };
+		5C3AA4041AEF357C00787EA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3AA4031AEF357C00787EA4 /* ViewController.swift */; };
+		5C3AA4071AEF357C00787EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C3AA4051AEF357C00787EA4 /* Main.storyboard */; };
+		5C3AA4091AEF357C00787EA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C3AA4081AEF357C00787EA4 /* Images.xcassets */; };
+		5C3AA40C1AEF357C00787EA4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C3AA40A1AEF357C00787EA4 /* LaunchScreen.xib */; };
+		5C3AA4181AEF357C00787EA4 /* Family_Dinner_QuestionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3AA4171AEF357C00787EA4 /* Family_Dinner_QuestionsTests.swift */; };
+		5C6E89961AF2C08F0003666A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE75DE81AF013AB00F171F7 /* Images.xcassets */; };
+		5C6E89971AF2C1020003666A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C3AA4081AEF357C00787EA4 /* Images.xcassets */; };
+		5C6E89981AF2C1030003666A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C3AA4081AEF357C00787EA4 /* Images.xcassets */; };
+		5CE75DE31AF013AB00F171F7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE75DE21AF013AB00F171F7 /* InterfaceController.swift */; };
+		5CE75DE51AF013AB00F171F7 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE75DE41AF013AB00F171F7 /* NotificationController.swift */; };
+		5CE75DE71AF013AB00F171F7 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE75DE61AF013AB00F171F7 /* GlanceController.swift */; };
+		5CE75DE91AF013AB00F171F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE75DE81AF013AB00F171F7 /* Images.xcassets */; };
+		5CE75DED1AF013AB00F171F7 /* Family Dinner Questions WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 5CE75DEC1AF013AB00F171F7 /* Family Dinner Questions WatchKit App.app */; };
+		5CE75DF51AF013AB00F171F7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE75DF31AF013AB00F171F7 /* Interface.storyboard */; };
+		5CE75DF71AF013AB00F171F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE75DF61AF013AB00F171F7 /* Images.xcassets */; };
+		5CE75DFB1AF013AB00F171F7 /* Family Dinner Questions WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5CE75DDD1AF013AA00F171F7 /* Family Dinner Questions WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5CE75E051AF018E200F171F7 /* PageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE75E041AF018E200F171F7 /* PageInterfaceController.swift */; };
+		5CF27A5E1AEF5D7100E3A476 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF27A5C1AEF5D7100E3A476 /* DraggableView.swift */; };
+		5CF27A5F1AEF5D7100E3A476 /* DraggableViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF27A5D1AEF5D7100E3A476 /* DraggableViewBackground.swift */; };
+		5CF27A611AEF5DE800E3A476 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF27A601AEF5DE800E3A476 /* OverlayView.swift */; };
+		5CF27A631AEF5E2000E3A476 /* theInquisitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF27A621AEF5E2000E3A476 /* theInquisitor.swift */; };
+		5CF27A651AEF5EC900E3A476 /* questions-basic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CF27A641AEF5EC900E3A476 /* questions-basic.plist */; };
+		5CF27A671AEF6C1B00E3A476 /* KlinicSlabBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5CF27A661AEF6A8900E3A476 /* KlinicSlabBold.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C3AA4121AEF357C00787EA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C3AA3F41AEF357C00787EA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C3AA3FB1AEF357C00787EA4;
+			remoteInfo = "Family Dinner Questions";
+		};
+		5CE75DEE1AF013AB00F171F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C3AA3F41AEF357C00787EA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CE75DEB1AF013AB00F171F7;
+			remoteInfo = "Family Dinner Questions WatchKit App";
+		};
+		5CE75DF81AF013AB00F171F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C3AA3F41AEF357C00787EA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5CE75DDC1AF013AA00F171F7;
+			remoteInfo = "Family Dinner Questions WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5CE75DFA1AF013AB00F171F7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5CE75DFB1AF013AB00F171F7 /* Family Dinner Questions WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5C1417E31AF3FDDD0055D6DE /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		5C3AA3FC1AEF357C00787EA4 /* Family Dinner Questions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family Dinner Questions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C3AA4001AEF357C00787EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C3AA4011AEF357C00787EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5C3AA4031AEF357C00787EA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5C3AA4061AEF357C00787EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C3AA4081AEF357C00787EA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5C3AA40B1AEF357C00787EA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5C3AA4111AEF357C00787EA4 /* Family Dinner QuestionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Family Dinner QuestionsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C3AA4161AEF357C00787EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5C3AA4171AEF357C00787EA4 /* Family_Dinner_QuestionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family_Dinner_QuestionsTests.swift; sourceTree = "<group>"; };
+		5CE747CF1AF1699E00F002AC /* Family Dinner Questions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Family Dinner Questions.entitlements"; sourceTree = "<group>"; };
+		5CE747D01AF16AE400F002AC /* Family Dinner Questions WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Family Dinner Questions WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		5CE75DDD1AF013AA00F171F7 /* Family Dinner Questions WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Family Dinner Questions WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE75DE01AF013AB00F171F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CE75DE11AF013AB00F171F7 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5CE75DE21AF013AB00F171F7 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		5CE75DE41AF013AB00F171F7 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		5CE75DE61AF013AB00F171F7 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		5CE75DE81AF013AB00F171F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5CE75DEC1AF013AB00F171F7 /* Family Dinner Questions WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family Dinner Questions WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CE75DF21AF013AB00F171F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CE75DF41AF013AB00F171F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5CE75DF61AF013AB00F171F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5CE75E041AF018E200F171F7 /* PageInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageInterfaceController.swift; sourceTree = "<group>"; };
+		5CF27A5C1AEF5D7100E3A476 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
+		5CF27A5D1AEF5D7100E3A476 /* DraggableViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableViewBackground.swift; sourceTree = "<group>"; };
+		5CF27A601AEF5DE800E3A476 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		5CF27A621AEF5E2000E3A476 /* theInquisitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = theInquisitor.swift; path = ../theInquisitor.swift; sourceTree = "<group>"; };
+		5CF27A641AEF5EC900E3A476 /* questions-basic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "questions-basic.plist"; sourceTree = "<group>"; };
+		5CF27A661AEF6A8900E3A476 /* KlinicSlabBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KlinicSlabBold.otf; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C3AA3F91AEF357C00787EA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C3AA40E1AEF357C00787EA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE75DDA1AF013AA00F171F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C3AA3F31AEF357C00787EA4 = {
+			isa = PBXGroup;
+			children = (
+				5C3AA3FE1AEF357C00787EA4 /* Family Dinner Questions */,
+				5C3AA4141AEF357C00787EA4 /* Family Dinner QuestionsTests */,
+				5CE75DDE1AF013AA00F171F7 /* Family Dinner Questions WatchKit Extension */,
+				5CE75DF01AF013AB00F171F7 /* Family Dinner Questions WatchKit App */,
+				5C3AA3FD1AEF357C00787EA4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5C3AA3FD1AEF357C00787EA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C3AA3FC1AEF357C00787EA4 /* Family Dinner Questions.app */,
+				5C3AA4111AEF357C00787EA4 /* Family Dinner QuestionsTests.xctest */,
+				5CE75DDD1AF013AA00F171F7 /* Family Dinner Questions WatchKit Extension.appex */,
+				5CE75DEC1AF013AB00F171F7 /* Family Dinner Questions WatchKit App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C3AA3FE1AEF357C00787EA4 /* Family Dinner Questions */ = {
+			isa = PBXGroup;
+			children = (
+				5CE747CF1AF1699E00F002AC /* Family Dinner Questions.entitlements */,
+				5CF27A621AEF5E2000E3A476 /* theInquisitor.swift */,
+				5C3AA4011AEF357C00787EA4 /* AppDelegate.swift */,
+				5C3AA4031AEF357C00787EA4 /* ViewController.swift */,
+				5C3AA4051AEF357C00787EA4 /* Main.storyboard */,
+				5CF27A5C1AEF5D7100E3A476 /* DraggableView.swift */,
+				5CF27A601AEF5DE800E3A476 /* OverlayView.swift */,
+				5CF27A5D1AEF5D7100E3A476 /* DraggableViewBackground.swift */,
+				5CF27A641AEF5EC900E3A476 /* questions-basic.plist */,
+				5C3AA4081AEF357C00787EA4 /* Images.xcassets */,
+				5C3AA40A1AEF357C00787EA4 /* LaunchScreen.xib */,
+				5CF27A661AEF6A8900E3A476 /* KlinicSlabBold.otf */,
+				5C3AA3FF1AEF357C00787EA4 /* Supporting Files */,
+				5C1417E31AF3FDDD0055D6DE /* SettingsTableViewController.swift */,
+			);
+			path = "Family Dinner Questions";
+			sourceTree = "<group>";
+		};
+		5C3AA3FF1AEF357C00787EA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C3AA4001AEF357C00787EA4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C3AA4141AEF357C00787EA4 /* Family Dinner QuestionsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5C3AA4171AEF357C00787EA4 /* Family_Dinner_QuestionsTests.swift */,
+				5C3AA4151AEF357C00787EA4 /* Supporting Files */,
+			);
+			path = "Family Dinner QuestionsTests";
+			sourceTree = "<group>";
+		};
+		5C3AA4151AEF357C00787EA4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C3AA4161AEF357C00787EA4 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5CE75DDE1AF013AA00F171F7 /* Family Dinner Questions WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5CE747D01AF16AE400F002AC /* Family Dinner Questions WatchKit Extension.entitlements */,
+				5CE75DE21AF013AB00F171F7 /* InterfaceController.swift */,
+				5CE75E041AF018E200F171F7 /* PageInterfaceController.swift */,
+				5CE75DE41AF013AB00F171F7 /* NotificationController.swift */,
+				5CE75DE61AF013AB00F171F7 /* GlanceController.swift */,
+				5CE75DE81AF013AB00F171F7 /* Images.xcassets */,
+				5CE75DDF1AF013AB00F171F7 /* Supporting Files */,
+			);
+			path = "Family Dinner Questions WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		5CE75DDF1AF013AB00F171F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CE75DE01AF013AB00F171F7 /* Info.plist */,
+				5CE75DE11AF013AB00F171F7 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5CE75DF01AF013AB00F171F7 /* Family Dinner Questions WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				5CE75DF31AF013AB00F171F7 /* Interface.storyboard */,
+				5CE75DF61AF013AB00F171F7 /* Images.xcassets */,
+				5CE75DF11AF013AB00F171F7 /* Supporting Files */,
+			);
+			path = "Family Dinner Questions WatchKit App";
+			sourceTree = "<group>";
+		};
+		5CE75DF11AF013AB00F171F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5CE75DF21AF013AB00F171F7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C3AA3FB1AEF357C00787EA4 /* Family Dinner Questions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C3AA41B1AEF357C00787EA4 /* Build configuration list for PBXNativeTarget "Family Dinner Questions" */;
+			buildPhases = (
+				5C3AA3F81AEF357C00787EA4 /* Sources */,
+				5C3AA3F91AEF357C00787EA4 /* Frameworks */,
+				5C3AA3FA1AEF357C00787EA4 /* Resources */,
+				5CE75DFA1AF013AB00F171F7 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5CE75DF91AF013AB00F171F7 /* PBXTargetDependency */,
+			);
+			name = "Family Dinner Questions";
+			productName = "Family Dinner Questions";
+			productReference = 5C3AA3FC1AEF357C00787EA4 /* Family Dinner Questions.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5C3AA4101AEF357C00787EA4 /* Family Dinner QuestionsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C3AA41E1AEF357C00787EA4 /* Build configuration list for PBXNativeTarget "Family Dinner QuestionsTests" */;
+			buildPhases = (
+				5C3AA40D1AEF357C00787EA4 /* Sources */,
+				5C3AA40E1AEF357C00787EA4 /* Frameworks */,
+				5C3AA40F1AEF357C00787EA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C3AA4131AEF357C00787EA4 /* PBXTargetDependency */,
+			);
+			name = "Family Dinner QuestionsTests";
+			productName = "Family Dinner QuestionsTests";
+			productReference = 5C3AA4111AEF357C00787EA4 /* Family Dinner QuestionsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5CE75DDC1AF013AA00F171F7 /* Family Dinner Questions WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CE75E011AF013AB00F171F7 /* Build configuration list for PBXNativeTarget "Family Dinner Questions WatchKit Extension" */;
+			buildPhases = (
+				5CE75DD91AF013AA00F171F7 /* Sources */,
+				5CE75DDA1AF013AA00F171F7 /* Frameworks */,
+				5CE75DDB1AF013AA00F171F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5CE75DEF1AF013AB00F171F7 /* PBXTargetDependency */,
+			);
+			name = "Family Dinner Questions WatchKit Extension";
+			productName = "Family Dinner Questions WatchKit Extension";
+			productReference = 5CE75DDD1AF013AA00F171F7 /* Family Dinner Questions WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		5CE75DEB1AF013AB00F171F7 /* Family Dinner Questions WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CE75E001AF013AB00F171F7 /* Build configuration list for PBXNativeTarget "Family Dinner Questions WatchKit App" */;
+			buildPhases = (
+				5CE75DEA1AF013AB00F171F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Family Dinner Questions WatchKit App";
+			productName = "Family Dinner Questions WatchKit App";
+			productReference = 5CE75DEC1AF013AB00F171F7 /* Family Dinner Questions WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C3AA3F41AEF357C00787EA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Ben Lew";
+				TargetAttributes = {
+					5C3AA3FB1AEF357C00787EA4 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = CM44H87VTD;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					5C3AA4101AEF357C00787EA4 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 5C3AA3FB1AEF357C00787EA4;
+					};
+					5CE75DDC1AF013AA00F171F7 = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = CM44H87VTD;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					5CE75DEB1AF013AB00F171F7 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 5C3AA3F71AEF357C00787EA4 /* Build configuration list for PBXProject "Family Dinner Questions" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C3AA3F31AEF357C00787EA4;
+			productRefGroup = 5C3AA3FD1AEF357C00787EA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C3AA3FB1AEF357C00787EA4 /* Family Dinner Questions */,
+				5C3AA4101AEF357C00787EA4 /* Family Dinner QuestionsTests */,
+				5CE75DDC1AF013AA00F171F7 /* Family Dinner Questions WatchKit Extension */,
+				5CE75DEB1AF013AB00F171F7 /* Family Dinner Questions WatchKit App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C3AA3FA1AEF357C00787EA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CF27A671AEF6C1B00E3A476 /* KlinicSlabBold.otf in Resources */,
+				5C3AA4071AEF357C00787EA4 /* Main.storyboard in Resources */,
+				5CF27A651AEF5EC900E3A476 /* questions-basic.plist in Resources */,
+				5C3AA40C1AEF357C00787EA4 /* LaunchScreen.xib in Resources */,
+				5C3AA4091AEF357C00787EA4 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C3AA40F1AEF357C00787EA4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE75DDB1AF013AA00F171F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C6E89971AF2C1020003666A /* Images.xcassets in Resources */,
+				5CE75DED1AF013AB00F171F7 /* Family Dinner Questions WatchKit App.app in Resources */,
+				5CE75DE91AF013AB00F171F7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE75DEA1AF013AB00F171F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C6E89961AF2C08F0003666A /* Images.xcassets in Resources */,
+				5C6E89981AF2C1030003666A /* Images.xcassets in Resources */,
+				5CE75DF51AF013AB00F171F7 /* Interface.storyboard in Resources */,
+				5CE75DF71AF013AB00F171F7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C3AA3F81AEF357C00787EA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CF27A5F1AEF5D7100E3A476 /* DraggableViewBackground.swift in Sources */,
+				5CF27A5E1AEF5D7100E3A476 /* DraggableView.swift in Sources */,
+				5CF27A631AEF5E2000E3A476 /* theInquisitor.swift in Sources */,
+				5C3AA4041AEF357C00787EA4 /* ViewController.swift in Sources */,
+				5C3AA4021AEF357C00787EA4 /* AppDelegate.swift in Sources */,
+				5CF27A611AEF5DE800E3A476 /* OverlayView.swift in Sources */,
+				5C1417E41AF3FDDD0055D6DE /* SettingsTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C3AA40D1AEF357C00787EA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C3AA4181AEF357C00787EA4 /* Family_Dinner_QuestionsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5CE75DD91AF013AA00F171F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CE75DE51AF013AB00F171F7 /* NotificationController.swift in Sources */,
+				5CE75DE31AF013AB00F171F7 /* InterfaceController.swift in Sources */,
+				5CE75E051AF018E200F171F7 /* PageInterfaceController.swift in Sources */,
+				5CE75DE71AF013AB00F171F7 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C3AA4131AEF357C00787EA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C3AA3FB1AEF357C00787EA4 /* Family Dinner Questions */;
+			targetProxy = 5C3AA4121AEF357C00787EA4 /* PBXContainerItemProxy */;
+		};
+		5CE75DEF1AF013AB00F171F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CE75DEB1AF013AB00F171F7 /* Family Dinner Questions WatchKit App */;
+			targetProxy = 5CE75DEE1AF013AB00F171F7 /* PBXContainerItemProxy */;
+		};
+		5CE75DF91AF013AB00F171F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5CE75DDC1AF013AA00F171F7 /* Family Dinner Questions WatchKit Extension */;
+			targetProxy = 5CE75DF81AF013AB00F171F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5C3AA4051AEF357C00787EA4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C3AA4061AEF357C00787EA4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5C3AA40A1AEF357C00787EA4 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C3AA40B1AEF357C00787EA4 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		5CE75DF31AF013AB00F171F7 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5CE75DF41AF013AB00F171F7 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C3AA4191AEF357C00787EA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5C3AA41A1AEF357C00787EA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C3AA41C1AEF357C00787EA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Family Dinner Questions/Family Dinner Questions.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Family Dinner Questions/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5C3AA41D1AEF357C00787EA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Family Dinner Questions/Family Dinner Questions.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Family Dinner Questions/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
+		5C3AA41F1AEF357C00787EA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Family Dinner QuestionsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Family Dinner Questions.app/Family Dinner Questions";
+			};
+			name = Debug;
+		};
+		5C3AA4201AEF357C00787EA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Family Dinner QuestionsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Family Dinner Questions.app/Family Dinner Questions";
+			};
+			name = Release;
+		};
+		5CE75DFC1AF013AB00F171F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Family Dinner Questions WatchKit Extension/Family Dinner Questions WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Family Dinner Questions WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		5CE75DFD1AF013AB00F171F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "Family Dinner Questions WatchKit Extension/Family Dinner Questions WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Family Dinner Questions WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		5CE75DFE1AF013AB00F171F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Family_Dinner_Questions_WatchKit_Extension;
+				INFOPLIST_FILE = "Family Dinner Questions WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		5CE75DFF1AF013AB00F171F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = Family_Dinner_Questions_WatchKit_Extension;
+				INFOPLIST_FILE = "Family Dinner Questions WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C3AA3F71AEF357C00787EA4 /* Build configuration list for PBXProject "Family Dinner Questions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C3AA4191AEF357C00787EA4 /* Debug */,
+				5C3AA41A1AEF357C00787EA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C3AA41B1AEF357C00787EA4 /* Build configuration list for PBXNativeTarget "Family Dinner Questions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C3AA41C1AEF357C00787EA4 /* Debug */,
+				5C3AA41D1AEF357C00787EA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C3AA41E1AEF357C00787EA4 /* Build configuration list for PBXNativeTarget "Family Dinner QuestionsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C3AA41F1AEF357C00787EA4 /* Debug */,
+				5C3AA4201AEF357C00787EA4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CE75E001AF013AB00F171F7 /* Build configuration list for PBXNativeTarget "Family Dinner Questions WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE75DFE1AF013AB00F171F7 /* Debug */,
+				5CE75DFF1AF013AB00F171F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CE75E011AF013AB00F171F7 /* Build configuration list for PBXNativeTarget "Family Dinner Questions WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5CE75DFC1AF013AB00F171F7 /* Debug */,
+				5CE75DFD1AF013AB00F171F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C3AA3F41AEF357C00787EA4 /* Project object */;
+}
