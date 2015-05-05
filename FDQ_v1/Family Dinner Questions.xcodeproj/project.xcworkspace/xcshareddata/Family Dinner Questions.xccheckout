@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DEF6B41A-00F0-4AE1-AC8F-986288A401D5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Family Dinner Questions</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5CDC68307F151676BC0DD5EF4E6D435D6CAFA4A9</key>
+		<string>https://github.com/n0s0ap/family-dinner-questions.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FDQ_v1/Family Dinner Questions.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5CDC68307F151676BC0DD5EF4E6D435D6CAFA4A9</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/n0s0ap/family-dinner-questions.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5CDC68307F151676BC0DD5EF4E6D435D6CAFA4A9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5CDC68307F151676BC0DD5EF4E6D435D6CAFA4A9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>family-dinner-questions</string>
+		</dict>
+	</array>
+</dict>
+</plist>

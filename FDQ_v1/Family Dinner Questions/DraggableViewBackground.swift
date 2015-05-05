@@ -70,12 +70,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         addSubview(menuButton)
         menuButton.addTarget(self, action: "didPressMenuButton:", forControlEvents: UIControlEvents.TouchUpInside)
     }
-    func didPressMenuButton(sender: UIButton!) {
-        let settingsPage = self.storyboard!.instantiateViewControllerWithIdentifier("settings") as! SettingsTableViewController
-        
-        self.navigationController!.pushViewController(settingsPage, animated: true)
-    }
-
+    
     
     
 //    func addMessageButton() {
