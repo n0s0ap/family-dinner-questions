@@ -11,6 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var startButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"translucentHeader"), forBarMetrics: UIBarMetrics.Default)
@@ -18,8 +19,10 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.barStyle = UIBarStyle.Black
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         
-        var draggableViewBackground = DraggableViewBackground(frame: self.view.frame)
-        self.view.addSubview(draggableViewBackground);
+        let singleTap = UITapGestureRecognizer(target: self, action: "didPressStart:")
+        startButton.addGestureRecognizer(singleTap)
+        
+        
 
         heyInquisitor()
         func notifyAtDinnerTime() {
@@ -51,6 +54,11 @@ class ViewController: UIViewController {
         notifyAtDinnerTime()
     }
 
+    func didPressStart(recognizer: UITapGestureRecognizer) {
+        var draggableViewBackground = DraggableViewBackground(frame: self.view.frame)
+        self.view.addSubview(draggableViewBackground);
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
