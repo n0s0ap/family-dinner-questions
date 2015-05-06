@@ -78,7 +78,7 @@
                         <sections>
                             <tableViewSection headerTitle="Notification" id="Vch-9I-vfC">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="99Q-oh-ceI">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="53" id="99Q-oh-ceI">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="99Q-oh-ceI" id="ICV-wr-WYN">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -105,19 +105,33 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="45" id="p6C-SP-Rni">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="8xV-9q-W0c" detailTextLabel="Eke-gl-p1V" rowHeight="36" style="IBUITableViewCellStyleValue1" id="p6C-SP-Rni">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p6C-SP-Rni" id="0ef-Gf-F7m">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dinner time is usually..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVg-L0-BeH">
-                                                    <rect key="frame" x="8" y="11" width="176" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8xV-9q-W0c">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <datePicker contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="AMb-KU-vJe">
-                                                    <rect key="frame" x="147" y="-19" width="600" height="51"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eke-gl-p1V">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pickerCell" rowHeight="187" id="Mko-cQ-M3M">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mko-cQ-M3M" id="ylA-I6-M1x">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="AMb-KU-vJe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="154"/>
                                                     <date key="date" timeIntervalSinceReferenceDate="452557832.04761302">
                                                         <!--2015-05-05 22:30:32 +0000-->
                                                     </date>
@@ -127,16 +141,10 @@
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="centerY" secondItem="TVg-L0-BeH" secondAttribute="centerY" id="9Fp-yd-oNn"/>
-                                                <constraint firstItem="TVg-L0-BeH" firstAttribute="centerY" secondItem="0ef-Gf-F7m" secondAttribute="centerY" id="AHp-qx-h7d"/>
-                                                <constraint firstItem="TVg-L0-BeH" firstAttribute="leading" secondItem="0ef-Gf-F7m" secondAttribute="leadingMargin" constant="-7" id="dKy-Kc-OTQ"/>
+                                                <constraint firstItem="AMb-KU-vJe" firstAttribute="top" secondItem="ylA-I6-M1x" secondAttribute="top" id="6bt-8u-Ycs"/>
+                                                <constraint firstAttribute="trailing" secondItem="AMb-KU-vJe" secondAttribute="trailing" id="Kul-xm-tY8"/>
+                                                <constraint firstItem="AMb-KU-vJe" firstAttribute="leading" secondItem="ylA-I6-M1x" secondAttribute="leading" id="NfB-66-zEQ"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pickerCell" rowHeight="54" id="Mko-cQ-M3M">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mko-cQ-M3M" id="ylA-I6-M1x">
-                                            <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -148,6 +156,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="detailLabel" destination="Eke-gl-p1V" id="c7A-ZU-iiH"/>
                         <outlet property="notifyMeSwitch" destination="O8h-eX-x6e" id="Zm8-hA-PYR"/>
                         <outlet property="notifyMeTime" destination="AMb-KU-vJe" id="ffD-C3-HKq"/>
                     </connections>

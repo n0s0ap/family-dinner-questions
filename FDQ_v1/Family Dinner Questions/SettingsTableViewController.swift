@@ -12,26 +12,27 @@ class SettingsTableViewController: UITableViewController {
 
     @IBOutlet weak var notifyMeSwitch: UISwitch!
     @IBOutlet weak var notifyMeTime: UIDatePicker!
+    @IBOutlet weak var detailLabel: UILabel!
     @IBAction func notifyMeSwitchSaveState(sender: AnyObject) {
         var defaults = NSUserDefaults.standardUserDefaults()
         
         if notifyMeSwitch.on {
             defaults.setBool(true, forKey: "notifyMeSwitchState")
             println("the switch says yes")
-            notifyMeTime.userInteractionEnabled = true
-            notifyMeTime.hidden = false
+          
         } else {
             defaults.setBool(false, forKey: "notifyMeSwitchState")
             println("the switch says no")
-            notifyMeTime.userInteractionEnabled = false
-            notifyMeTime.hidden = true
+          
         }
     }
     
+    var datePickerHidden = true
+    let theTimeFromSettings:NSDate = (NSUserDefaults.standardUserDefaults().valueForKey("notifyMeTime") as? NSDate)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        datePickerChanged()
         var defaults = NSUserDefaults.standardUserDefaults()
         
         if (defaults.objectForKey("SwitchState") != nil) {
@@ -43,17 +44,15 @@ class SettingsTableViewController: UITableViewController {
         let currentDate = NSDate()  //5 -  get the current date
         // notifyMeTime.minimumDate = currentDate  //6- set the current date/time as a minimum
         
-        let theTimeFromSettings:NSDate = (NSUserDefaults.standardUserDefaults().valueForKey("notifyMeTime") as? NSDate)!
+        
         println("I just got the time from settings and it is: \(theTimeFromSettings)")
+        
+        
         if ((defaults.valueForKey("notifyMeTime")) != nil){
             notifyMeTime.date = theTimeFromSettings
         } else {
-            defaults.setValue(notifyMeTime, forKey: "notifyMeAtThisTime")
+            defaults.setValue(notifyMeTime.date, forKey: "notifyMeTime")
         }
-        
-        
-        
-        
         
         println("the time from the picker is \(currentDate)")
         
@@ -63,17 +62,43 @@ class SettingsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func datePickerChanged () {
+        detailLabel.text = NSDateFormatter.localizedStringFromDate(notifyMeTime.date, dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 && indexPath.row == 1 {
+            toggleDatepicker()
+        }
+    }
+    
+    
+    func toggleDatepicker() {
+        
+        datePickerHidden = !datePickerHidden
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
+
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if datePickerHidden && indexPath.section == 0 && indexPath.row == 2 {
+            return 0
+        }
+        else {
+            return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+        }
+    }
+
 
     @IBAction func notifyMeTimeSet(sender: UIDatePicker) {
         var defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue(notifyMeTime.date, forKey: "notifyMeTime")
         let timechanged = notifyMeTime.date
         println("changed the time to \(timechanged) ")
+        datePickerChanged()
     }
     // MARK: - Table view data source
 
