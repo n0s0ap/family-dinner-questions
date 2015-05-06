@@ -18,11 +18,17 @@ class SettingsTableViewController: UITableViewController {
         if notifyMeSwitch.on {
             defaults.setBool(true, forKey: "notifyMeSwitchState")
             println("the switch says yes")
+            notifyMeTime.userInteractionEnabled = true
+            notifyMeTime.hidden = false
         } else {
             defaults.setBool(false, forKey: "notifyMeSwitchState")
             println("the switch says no")
+            notifyMeTime.userInteractionEnabled = false
+            notifyMeTime.hidden = true
         }
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,14 +36,25 @@ class SettingsTableViewController: UITableViewController {
         
         if (defaults.objectForKey("SwitchState") != nil) {
             notifyMeSwitch.on = defaults.boolForKey("SwitchState")
+            
         }
         
         notifyMeTime.datePickerMode = UIDatePickerMode.Time // 4- use time only
         let currentDate = NSDate()  //5 -  get the current date
         // notifyMeTime.minimumDate = currentDate  //6- set the current date/time as a minimum
-        notifyMeTime.date = currentDate //7 - defaults to current time but shows how to use it.
         
-        defaults.setObject(currentDate, forKey: "notifyMeTime")
+        let theTimeFromSettings:NSDate = (NSUserDefaults.standardUserDefaults().valueForKey("notifyMeTime") as? NSDate)!
+        println("I just got the time from settings and it is: \(theTimeFromSettings)")
+        if ((defaults.valueForKey("notifyMeTime")) != nil){
+            notifyMeTime.date = theTimeFromSettings
+        } else {
+            defaults.setValue(notifyMeTime, forKey: "notifyMeAtThisTime")
+        }
+        
+        
+        
+        
+        
         println("the time from the picker is \(currentDate)")
         
         // Uncomment the following line to preserve selection between presentations
@@ -52,6 +69,12 @@ class SettingsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func notifyMeTimeSet(sender: UIDatePicker) {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setValue(notifyMeTime.date, forKey: "notifyMeTime")
+        let timechanged = notifyMeTime.date
+        println("changed the time to \(timechanged) ")
+    }
     // MARK: - Table view data source
 
 //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
