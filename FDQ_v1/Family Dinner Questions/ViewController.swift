@@ -28,19 +28,18 @@ class ViewController: UIViewController {
             println("started the notification func")
             UIApplication.sharedApplication().cancelAllLocalNotifications()
             
-            
-            
-            
-//           NSDate *d = [calendar dateBySettingHour:17 minute:0 second:0 ofDate:[NSDate date] options:0];
-//            
-//            dinnerTime = NSDate(coder: now)
+            let defaults = NSUserDefaults.standardUserDefaults()
+            if let dinnertime = defaults.stringForKey("notifyMeTime")
+            {
+                println("this is the dinnertime \(dinnertime)")
+            }
             
             var localNotification:UILocalNotification = UILocalNotification()
             localNotification.timeZone = NSTimeZone.localTimeZone()
             localNotification.alertAction = "Time for a question"
             localNotification.alertBody = "Time for a dinner question!"
             localNotification.soundName = UILocalNotificationDefaultSoundName
-            localNotification.fireDate = NSDate(timeIntervalSinceNow: 5)
+            //localNotification.fireDate = myDinnerTime
             localNotification.repeatInterval = NSCalendarUnit.CalendarUnitDay
             UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
             var theScheduledNotifications = UIApplication.sharedApplication().scheduledLocalNotifications

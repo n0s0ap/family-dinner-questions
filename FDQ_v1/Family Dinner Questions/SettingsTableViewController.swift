@@ -37,6 +37,8 @@ class SettingsTableViewController: UITableViewController {
         // notifyMeTime.minimumDate = currentDate  //6- set the current date/time as a minimum
         notifyMeTime.date = currentDate //7 - defaults to current time but shows how to use it.
         
+        defaults.setObject(currentDate, forKey: "notifyMeTime")
+        println("the time from the picker is \(currentDate)")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
