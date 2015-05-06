@@ -33,20 +33,20 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         super.layoutSubviews()
-        setupView()
+        // setupView()
         setLoadedCardsCap()
         createCards()
         displayCards()
     }
     
-    func setupView() {
-        setBackgroundColor()
-        addMenuButton()
-//        addMessageButton()
-//        addXButton()
-//        addCheckButton()
-        addLogo()
-    }
+//    func setupView() {
+//        setBackgroundColor()
+//        addMenuButton()
+////        addMessageButton()
+////        addXButton()
+////        addCheckButton()
+//        addLogo()
+//    }
 
     
     func addLogo() {
