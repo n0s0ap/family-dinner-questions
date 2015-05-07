@@ -18,7 +18,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var defaults = NSUserDefaults.standardUserDefaults()
-        let theTimeFromSettings:NSDate = (NSUserDefaults.standardUserDefaults().valueForKey("notifyMeTime") as? NSDate)!
+        defaults.setValue(NSDate(), forKey: "notifyMeTime")
+        let theTimeFromSettings:NSDate! = NSUserDefaults.standardUserDefaults().valueForKey("notifyMeTime") as? NSDate!
         //self.navigationController?.navigationBar.setBackgroundImage(UIImage(named:"translucentHeader"), forBarMetrics: UIBarMetrics.Default)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
         self.navigationController?.navigationBar.translucent = true

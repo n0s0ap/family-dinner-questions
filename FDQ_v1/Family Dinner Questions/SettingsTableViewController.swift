@@ -29,7 +29,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     var datePickerHidden = true
-    let theTimeFromSettings:NSDate = (NSUserDefaults.standardUserDefaults().valueForKey("notifyMeTime") as? NSDate)!
+    let theTimeFromSettings:NSDate! = NSUserDefaults.standardUserDefaults().valueForKey("notifyMeTime") as? NSDate!
     
     override func viewDidLoad() {
         super.viewDidLoad()

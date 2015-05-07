@@ -14,7 +14,7 @@ import Foundation
 func notifyAtDinnerTime() {
     println("Updating the Notification")
     UIApplication.sharedApplication().cancelAllLocalNotifications()
-    let theTimeFromSettings:NSDate = (NSUserDefaults.standardUserDefaults().valueForKey("notifyMeTime") as? NSDate)!
+    let theTimeFromSettings:NSDate! = NSUserDefaults.standardUserDefaults().valueForKey("notifyMeTime") as? NSDate!
     println("dinner time is set at \(theTimeFromSettings)")
     
     var localNotification:UILocalNotification = UILocalNotification()
