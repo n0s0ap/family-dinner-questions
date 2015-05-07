@@ -19,11 +19,12 @@ class SettingsTableViewController: UITableViewController {
         if notifyMeSwitch.on {
             defaults.setBool(true, forKey: "notifyMeSwitchState")
             println("the switch says yes")
+            
+
           
         } else {
             defaults.setBool(false, forKey: "notifyMeSwitchState")
             println("the switch says no")
-          
         }
     }
     
@@ -35,6 +36,7 @@ class SettingsTableViewController: UITableViewController {
         datePickerChanged()
         var defaults = NSUserDefaults.standardUserDefaults()
         
+        detailLabel.text = NSDateFormatter.localizedStringFromDate(theTimeFromSettings, dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
         if (defaults.objectForKey("SwitchState") != nil) {
             notifyMeSwitch.on = defaults.boolForKey("SwitchState")
             
@@ -77,7 +79,8 @@ class SettingsTableViewController: UITableViewController {
     func toggleDatepicker() {
         
         datePickerHidden = !datePickerHidden
-        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setValue(notifyMeTime.date, forKey: "notifyMeTime")
         tableView.beginUpdates()
         tableView.endUpdates()
 
@@ -96,10 +99,13 @@ class SettingsTableViewController: UITableViewController {
     @IBAction func notifyMeTimeSet(sender: UIDatePicker) {
         var defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue(notifyMeTime.date, forKey: "notifyMeTime")
-        let timechanged = notifyMeTime.date
-        println("changed the time to \(timechanged) ")
+        let timechanged = NSDateFormatter.localizedStringFromDate(notifyMeTime.date, dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+        println("changed the time to \(timechanged)")
         datePickerChanged()
+        
+        notifyAtDinnerTime()
     }
+    
     // MARK: - Table view data source
 
 //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
