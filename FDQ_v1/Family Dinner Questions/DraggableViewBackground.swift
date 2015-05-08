@@ -9,6 +9,14 @@
 import Foundation
 import UIKit
 
+var defaults = NSUserDefaults.standardUserDefaults()
+
+let testArray:AnyObject? = defaults.objectForKey("theQuestionsDeck")
+var theSavedQuestions = testArray as AnyObject! as! [String]
+
+// var cardsLoadedIndex = defaults.integerForKey("theQuestionsDeckIndex")
+
+//println("the saved deck is \(theSavedQuestions)")
 
 class DraggableViewBackground: UIView, DraggableViewDelegate {
     
@@ -21,10 +29,13 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     let checkButton = UIButton()
     let xButton = UIButton()
     
-    let exampleCardLabels = theQuestions
+    
+    
+    let exampleCardLabels = theSavedQuestions
+    var cardsLoadedIndex = 0
     var loadedCards = NSMutableArray()
     var allCards =  NSMutableArray()
-    var cardsLoadedIndex = 0
+    
     var numLoadedCardsCap = 0
     
     required init(coder aDecoder: NSCoder) {
@@ -33,6 +44,8 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         super.layoutSubviews()
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
         // setupView()
         setLoadedCardsCap()
         createCards()
@@ -157,6 +170,9 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
             addSubview(loadedCards[0] as! DraggableView)
         }
         cardsLoadedIndex++;
+        //defaults.setInteger(cardsLoadedIndex, forKey: "theQuestionsDeckIndex")
+        //var readTheQuestionsIndex = defaults.integerForKey("theQuestionsDeckIndex")
+        //println("cardsLoadedIndex is \(cardsLoadedIndex), theQuestionsDeckIndex is \(readTheQuestionsIndex)")
     }
     
     func swipeRight() {

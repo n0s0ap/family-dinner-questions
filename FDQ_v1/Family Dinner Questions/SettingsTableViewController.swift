@@ -25,6 +25,7 @@ class SettingsTableViewController: UITableViewController {
         } else {
             defaults.setBool(false, forKey: "notifyMeSwitchState")
             println("the switch says no")
+            UIApplication.sharedApplication().cancelAllLocalNotifications()
         }
     }
     
@@ -44,7 +45,7 @@ class SettingsTableViewController: UITableViewController {
         
         notifyMeTime.datePickerMode = UIDatePickerMode.Time // 4- use time only
         let currentDate = NSDate()  //5 -  get the current date
-        // notifyMeTime.minimumDate = currentDate  //6- set the current date/time as a minimum
+        //notifyMeTime.minimumDate = currentDate  //6- set the current date/time as a minimum
         
         
         println("I just got the time from settings and it is: \(theTimeFromSettings)")
@@ -102,8 +103,11 @@ class SettingsTableViewController: UITableViewController {
         let timechanged = NSDateFormatter.localizedStringFromDate(notifyMeTime.date, dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
         println("changed the time to \(timechanged)")
         datePickerChanged()
-        
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
         notifyAtDinnerTime()
+     
+        
+        
     }
     
     // MARK: - Table view data source

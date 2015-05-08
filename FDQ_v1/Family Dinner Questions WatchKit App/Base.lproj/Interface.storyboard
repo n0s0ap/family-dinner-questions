@@ -55,7 +55,13 @@
         <scene sceneID="KIl-fV-djm">
             <objects>
                 <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="Family_Dinner_Questions_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" text="Label" id="eBb-nW-3Ag"/>
+                    </items>
                     <color key="backgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="questionMessage" destination="eBb-nW-3Ag" id="joF-jH-cDn"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="553" y="1001"/>

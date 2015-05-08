@@ -9,12 +9,11 @@
 import UIKit
 import Foundation
 
-
-
 func notifyAtDinnerTime() {
     println("Updating the Notification")
-    UIApplication.sharedApplication().cancelAllLocalNotifications()
-    let theTimeFromSettings:NSDate! = NSUserDefaults.standardUserDefaults().valueForKey("notifyMeTime") as? NSDate!
+    // UIApplication.sharedApplication().cancelAllLocalNotifications()
+    var defaults = NSUserDefaults.standardUserDefaults()
+    let theTimeFromSettings:NSDate! = defaults.valueForKey("notifyMeTime") as? NSDate!
     println("dinner time is set at \(theTimeFromSettings)")
     
     var localNotification:UILocalNotification = UILocalNotification()
@@ -26,6 +25,6 @@ func notifyAtDinnerTime() {
     localNotification.repeatInterval = NSCalendarUnit.CalendarUnitDay
     UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     var theScheduledNotifications = UIApplication.sharedApplication().scheduledLocalNotifications
-    println("\(theScheduledNotifications)")
+    println("the schedule is: \(theScheduledNotifications)")
     
 }
