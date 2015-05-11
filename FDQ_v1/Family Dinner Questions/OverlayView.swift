@@ -24,6 +24,7 @@ class OverlayView:UIView {
         super.init(frame: frame);
         setView()
         addImageView()
+        setTheImageView("launch")
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -37,6 +38,7 @@ class OverlayView:UIView {
     func addImageView() {
         setImageViewFrame()
         self.addSubview(imageView)
+        
     }
     
     func setImageViewFrame() {
@@ -48,23 +50,24 @@ class OverlayView:UIView {
     }
     
     func setMode(mode: OverlayViewMode) {
+        setTheImageView("launch")
         if (self.mode == mode) {
             return;
         }
         
         self.mode = mode;
         
-        switch (mode) {
-        case .Left:
-            setTheImageView("noButton")
-            break;
-        case .Right:
-            setTheImageView("yesButton")
-            break;
-        case .None:
-            break;
-            
-        }
+//        switch (mode) {
+//        case .Left:
+//            setTheImageView("noButton")
+//            break;
+//        case .Right:
+//            setTheImageView("yesButton")
+//            break;
+//        case .None:
+//            break;
+//            
+//        }
     }
     
 }

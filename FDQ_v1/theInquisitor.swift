@@ -19,15 +19,58 @@ func shuffleArray<T>(var array: [T]) -> [T] {
     return array
 }
 
+extension Array {
+    
+    func forEach(iterator: (T) -> Void) -> Array {
+        for item in self {
+            iterator(item)
+        }
+        
+        return self;
+    }
+    
+}
+
+
+
 
 func heyInquisitor() {
     println("The Inquisitor has been called")
-    let path = NSBundle.mainBundle().pathForResource("questions-basic", ofType: "plist")
-    let theCards = NSMutableArray(contentsOfFile: path!)
-    var theCleanCards = theCards as! AnyObject as! [String]
-    let theQuestions = shuffleArray(theCleanCards)
-    println("print theQuestions: \(theQuestions)")
     
+    
+    //  PACK ONE
+    let packOnepath = NSBundle.mainBundle().pathForResource("questions-basic", ofType: "plist")
+    let packOneCards = NSMutableArray(contentsOfFile: packOnepath!)
+    var packOneCleanCards = packOneCards as! AnyObject as! [String]
+
+    let packOne = packOneCleanCards.map({ (packOneCleanCard) -> String in
+        return packOneCleanCard.stringByAppendingString("CAT01")
+    })
+    //  END PACK ONE
+    
+    //  PACK TWO
+    let packTwopath = NSBundle.mainBundle().pathForResource("questions-travel", ofType: "plist")
+    let packTwoCards = NSMutableArray(contentsOfFile: packTwopath!)
+    var packTwoCleanCards = packTwoCards as! AnyObject as! [String]
+    
+    let packTwo = packTwoCleanCards.map({ (packTwoCleanCard) -> String in
+        return packTwoCleanCard.stringByAppendingString("CAT02")
+    })
+    //  END PACK TWO
+    
+    //  PACK THREE
+    let packThreepath = NSBundle.mainBundle().pathForResource("questions-food", ofType: "plist")
+    let packThreeCards = NSMutableArray(contentsOfFile: packThreepath!)
+    var packThreeCleanCards = packThreeCards as! AnyObject as! [String]
+    
+    let packThree = packThreeCleanCards.map({ (packThreeCleanCard) -> String in
+        return packThreeCleanCard.stringByAppendingString("CAT03")
+    })
+    //  END PACK THREE
+    
+    let mixTheQuestions = (packOne + packTwo + packThree)
+    let theQuestions = shuffleArray(mixTheQuestions)
+    println("print theQuestions: \(theQuestions)")
     
     // Supporting things
     

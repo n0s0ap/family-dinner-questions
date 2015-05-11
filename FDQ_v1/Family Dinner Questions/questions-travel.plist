@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>How many countries have you been to?</string>
+	<string>Have you ever traveled across an ocean?</string>
+	<string>Do you prefer road trips or plane rides?</string>
+	<string>What is the farthest away from home you have ever been?</string>
+	<string>If you could live anywhere in the world, where would it be?</string>
+	<string></string>
+</array>
+</plist>

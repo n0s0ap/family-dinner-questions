@@ -26,6 +26,7 @@ class DraggableView:UIView{
     var originalPoint = CGPoint()
     
     var information = UILabel()
+    //var questionColor = UIColor()
     
     var panGestureRecognizer = UIPanGestureRecognizer()
     
@@ -36,13 +37,13 @@ class DraggableView:UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    convenience init(frame: CGRect, information: String) {
+    convenience init(frame: CGRect, information: String, color: String) {
         self.init(frame: frame)
         setupView()
-//        addOverlayView()
+        addOverlayView()
 
         addGestureRecognizer()
-        setTheInformation(information)
+        setTheInformation(information, color: color)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -60,11 +61,11 @@ class DraggableView:UIView{
     }
    
     
-//    func addOverlayView() {
-//        let overlayViewFrame = CGRectMake(self.frame.size.width/2-100, 0, 100, 100)
-//        overlayView = OverlayView(frame: overlayViewFrame)
-//        addSubview(overlayView!)
-//    }
+    func addOverlayView() {
+        let overlayViewFrame = CGRectMake(self.frame.size.width/2-100, 0, 100, 100)
+        overlayView = OverlayView(frame: overlayViewFrame)
+        addSubview(overlayView!)
+    }
 
     func addGestureRecognizer() {
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "beingDragged:")
@@ -181,7 +182,7 @@ class DraggableView:UIView{
         leftAction()
     }
     
-    func setTheInformation(information: String?) {
+    func setTheInformation(information: String?, color: String!) {
         var textFrameMargins = self.frame.size.width*0.1
         var textFrameMarginsSubtract = textFrameMargins*2
         self.information.frame = CGRectMake(textFrameMargins, textFrameMargins, self.frame.size.width-textFrameMarginsSubtract, self.frame.size.height-textFrameMarginsSubtract)
@@ -191,7 +192,19 @@ class DraggableView:UIView{
         self.information.numberOfLines = 0
         self.information.backgroundColor = UIColor.whiteColor()
         self.information.text = information
-        self.information.textColor = UIColor.blackColor()
+
+        if (color=="CAT01") {
+            self.information.textColor = UIColor.blackColor()
+        } else if (color=="CAT02") {
+            self.information.textColor = UIColor.brownColor()
+        } else if (color=="CAT03") {
+            self.information.textColor = UIColor.blueColor()
+        } else {
+            self.information.textColor = UIColor.blackColor()
+        }
+        
+        
+        
         self.addSubview(self.information)
     }
     

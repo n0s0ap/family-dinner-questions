@@ -16,10 +16,12 @@ func notifyAtDinnerTime() {
     let theTimeFromSettings:NSDate! = defaults.valueForKey("notifyMeTime") as? NSDate!
     println("dinner time is set at \(theTimeFromSettings)")
     
+    var questionOfftheTop = theSavedQuestions[0]
+    
     var localNotification:UILocalNotification = UILocalNotification()
     localNotification.timeZone = NSTimeZone.localTimeZone()
-    localNotification.alertAction = "Time for a question"
-    localNotification.alertBody = "Time for a dinner question!"
+    localNotification.alertAction = "see more questions"
+    localNotification.alertBody = "Time for a dinner question: \(questionOfftheTop)"
     localNotification.soundName = UILocalNotificationDefaultSoundName
     localNotification.fireDate = theTimeFromSettings
     localNotification.repeatInterval = NSCalendarUnit.CalendarUnitDay

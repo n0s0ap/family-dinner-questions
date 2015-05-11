@@ -52,14 +52,14 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         displayCards()
     }
     
-//    func setupView() {
+   func setupView() {
 //        setBackgroundColor()
 //        addMenuButton()
-////        addMessageButton()
+       addMessageButton()
 ////        addXButton()
 ////        addCheckButton()
 //        addLogo()
-//    }
+   }
 
     
     func addLogo() {
@@ -86,12 +86,12 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     
     
     
-//    func addMessageButton() {
-//        self.messageButton.frame = CGRectMake(284, 34, 18, 18)
-//        self.messageButton.setImage(UIImage(named: "messageButton"), forState: .Normal)
-//        self.addSubview(messageButton)
-//    }
-//    
+    func addMessageButton() {
+        self.messageButton.frame = CGRectMake(284, 34, 18, 18)
+        self.messageButton.setImage(UIImage(named: "messageButton"), forState: .Normal)
+        self.addSubview(messageButton)
+    }
+//
 //    func addXButton() {
 //        xButton.frame = CGRectMake(60, 485, 59, 59)
 //        xButton.setImage(UIImage(named: "xButton"), forState: .Normal)
@@ -122,7 +122,14 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
             let cardFrame = CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)
             
             for cardLabel in exampleCardLabels {
-                var newCard = DraggableView(frame: cardFrame, information: cardLabel)
+                let stringLength = count(cardLabel)
+                let substringIndex = stringLength - 5
+                let theCardCat = cardLabel.substringFromIndex(advance(cardLabel.startIndex, substringIndex))
+                let stripCardCat = cardLabel.substringToIndex(advance(cardLabel.startIndex, substringIndex))
+                var theCardColor = theCardCat
+                var newinformation = stripCardCat
+                var newCard = DraggableView(frame: cardFrame, information: newinformation, color: theCardCat)
+                println("from the createcards function theCardCat=\(theCardCat)")
                 newCard.delegate = self;
                 allCards.addObject(newCard)
             }

@@ -17,6 +17,8 @@
 		5C6E89961AF2C08F0003666A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE75DE81AF013AB00F171F7 /* Images.xcassets */; };
 		5C6E89971AF2C1020003666A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C3AA4081AEF357C00787EA4 /* Images.xcassets */; };
 		5C6E89981AF2C1030003666A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C3AA4081AEF357C00787EA4 /* Images.xcassets */; };
+		5C873D371B0128D30052E94D /* questions-travel.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C873D361B0128D30052E94D /* questions-travel.plist */; };
+		5C873D391B0129020052E94D /* questions-food.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C873D381B0129020052E94D /* questions-food.plist */; };
 		5CD3D0021AFAD4A0008432DB /* theNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD3D0011AFAD4A0008432DB /* theNotifier.swift */; };
 		5CE75DE31AF013AB00F171F7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE75DE21AF013AB00F171F7 /* InterfaceController.swift */; };
 		5CE75DE51AF013AB00F171F7 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE75DE41AF013AB00F171F7 /* NotificationController.swift */; };
@@ -85,6 +87,8 @@
 		5C3AA4111AEF357C00787EA4 /* Family Dinner QuestionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Family Dinner QuestionsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C3AA4161AEF357C00787EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C3AA4171AEF357C00787EA4 /* Family_Dinner_QuestionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Family_Dinner_QuestionsTests.swift; sourceTree = "<group>"; };
+		5C873D361B0128D30052E94D /* questions-travel.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "questions-travel.plist"; sourceTree = "<group>"; };
+		5C873D381B0129020052E94D /* questions-food.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "questions-food.plist"; sourceTree = "<group>"; };
 		5CD3D0011AFAD4A0008432DB /* theNotifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = theNotifier.swift; sourceTree = "<group>"; };
 		5CE747CF1AF1699E00F002AC /* Family Dinner Questions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Family Dinner Questions.entitlements"; sourceTree = "<group>"; };
 		5CE747D01AF16AE400F002AC /* Family Dinner Questions WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Family Dinner Questions WatchKit Extension.entitlements"; sourceTree = "<group>"; };
@@ -166,13 +170,15 @@
 				5CF27A5C1AEF5D7100E3A476 /* DraggableView.swift */,
 				5CF27A601AEF5DE800E3A476 /* OverlayView.swift */,
 				5CF27A5D1AEF5D7100E3A476 /* DraggableViewBackground.swift */,
-				5CF27A641AEF5EC900E3A476 /* questions-basic.plist */,
 				5C3AA4081AEF357C00787EA4 /* Images.xcassets */,
 				5C3AA40A1AEF357C00787EA4 /* LaunchScreen.xib */,
 				5CF27A661AEF6A8900E3A476 /* KlinicSlabBold.otf */,
 				5C3AA3FF1AEF357C00787EA4 /* Supporting Files */,
 				5C1417E31AF3FDDD0055D6DE /* SettingsTableViewController.swift */,
 				5CD3D0011AFAD4A0008432DB /* theNotifier.swift */,
+				5CF27A641AEF5EC900E3A476 /* questions-basic.plist */,
+				5C873D361B0128D30052E94D /* questions-travel.plist */,
+				5C873D381B0129020052E94D /* questions-food.plist */,
 			);
 			path = "Family Dinner Questions";
 			sourceTree = "<group>";
@@ -380,7 +386,9 @@
 			files = (
 				5CF27A671AEF6C1B00E3A476 /* KlinicSlabBold.otf in Resources */,
 				5C3AA4071AEF357C00787EA4 /* Main.storyboard in Resources */,
+				5C873D371B0128D30052E94D /* questions-travel.plist in Resources */,
 				5CF27A651AEF5EC900E3A476 /* questions-basic.plist in Resources */,
+				5C873D391B0129020052E94D /* questions-food.plist in Resources */,
 				5C3AA40C1AEF357C00787EA4 /* LaunchScreen.xib in Resources */,
 				5C3AA4091AEF357C00787EA4 /* Images.xcassets in Resources */,
 			);
