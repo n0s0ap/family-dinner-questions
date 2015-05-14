@@ -46,7 +46,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         super.layoutSubviews()
         var defaults = NSUserDefaults.standardUserDefaults()
         
-        // setupView()
+        //setupView()
         setLoadedCardsCap()
         createCards()
         displayCards()
@@ -54,8 +54,8 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     
    func setupView() {
 //        setBackgroundColor()
-//        addMenuButton()
-       addMessageButton()
+addMenuButton()
+       //addMessageButton()
 ////        addXButton()
 ////        addCheckButton()
 //        addLogo()
@@ -84,6 +84,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
         menuButton.addTarget(self, action: "didPressMenuButton:", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
+ 
     
     
     func addMessageButton() {

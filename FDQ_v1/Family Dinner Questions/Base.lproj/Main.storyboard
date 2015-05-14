@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5yS-tX-qdD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14E17e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5yS-tX-qdD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAd-81-RgQ">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAd-81-RgQ">
                                 <rect key="frame" x="277" y="285" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="MUk-Pp-XuR"/>
@@ -27,22 +27,10 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="fdqLogo" translatesAutoresizingMaskIntoConstraints="NO" id="WZg-kG-V6R">
-                                <rect key="frame" x="260" y="20" width="81" height="70"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVo-Ec-m0y">
-                                <rect key="frame" x="498" y="130" width="30" height="31"/>
-                                <state key="normal" image="buttonSettings">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="0.2196078431372549" blue="0.35294117647058826" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="BAd-81-RgQ" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="EeG-h4-1VW"/>
-                            <constraint firstItem="WZg-kG-V6R" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="PI5-sz-Yfq"/>
-                            <constraint firstItem="WZg-kG-V6R" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="SnN-OJ-qlj"/>
-                            <constraint firstItem="BAd-81-RgQ" firstAttribute="centerX" secondItem="WZg-kG-V6R" secondAttribute="centerX" id="vND-8x-whO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4zw-Ac-1fS">
@@ -54,7 +42,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9p9-eG-VTE" kind="show" id="77H-T6-qCA"/>
+                                    <segue destination="9p9-eG-VTE" kind="show" identifier="goingToSettings" id="77H-T6-qCA"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -75,6 +63,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Notification" id="Vch-9I-vfC">
                                 <cells>
@@ -185,6 +175,5 @@
     </scenes>
     <resources>
         <image name="buttonSettings" width="30" height="31"/>
-        <image name="fdqLogo" width="81" height="70"/>
     </resources>
 </document>

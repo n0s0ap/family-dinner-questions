@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var startButton: UIButton!
     
+   
     
     
     override func viewDidLoad() {
@@ -28,9 +29,16 @@ class ViewController: UIViewController {
         
         
         // Navigation style stuff
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
-        self.navigationController?.navigationBar.translucent = true
-        self.navigationController?.navigationBar.backgroundColor = UIColor(red: 0.0, green: 0.3, blue: 0.5, alpha: 0)
+        //self.navigationController?.navigationBarHidden = true
+        
+        
+        let logo = UIImage(named: "fdqLogo.png")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
+        //self.navigationController?.navigationBar.translucent = true
+        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.95, green:0.22, blue:0.35, alpha:1.0)
+     
+        
         let singleTap = UITapGestureRecognizer(target: self, action: "didPressStart:")
         startButton.addGestureRecognizer(singleTap)
 
@@ -61,6 +69,7 @@ class ViewController: UIViewController {
         var draggableViewBackground = DraggableViewBackground(frame: self.view.frame)
         self.view.addSubview(draggableViewBackground);
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
