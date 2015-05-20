@@ -29,6 +29,7 @@
 		5CE75DF71AF013AB00F171F7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CE75DF61AF013AB00F171F7 /* Images.xcassets */; };
 		5CE75DFB1AF013AB00F171F7 /* Family Dinner Questions WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5CE75DDD1AF013AA00F171F7 /* Family Dinner Questions WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5CE75E051AF018E200F171F7 /* PageInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE75E041AF018E200F171F7 /* PageInterfaceController.swift */; };
+		5CF14D201B05583B00D2A7FD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF14D1F1B05583B00D2A7FD /* StoreKit.framework */; };
 		5CF27A5E1AEF5D7100E3A476 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF27A5C1AEF5D7100E3A476 /* DraggableView.swift */; };
 		5CF27A5F1AEF5D7100E3A476 /* DraggableViewBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF27A5D1AEF5D7100E3A476 /* DraggableViewBackground.swift */; };
 		5CF27A611AEF5DE800E3A476 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF27A601AEF5DE800E3A476 /* OverlayView.swift */; };
@@ -104,6 +105,7 @@
 		5CE75DF41AF013AB00F171F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		5CE75DF61AF013AB00F171F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5CE75E041AF018E200F171F7 /* PageInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageInterfaceController.swift; sourceTree = "<group>"; };
+		5CF14D1F1B05583B00D2A7FD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5CF27A5C1AEF5D7100E3A476 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableView.swift; sourceTree = "<group>"; };
 		5CF27A5D1AEF5D7100E3A476 /* DraggableViewBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraggableViewBackground.swift; sourceTree = "<group>"; };
 		5CF27A601AEF5DE800E3A476 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CF14D201B05583B00D2A7FD /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +143,7 @@
 		5C3AA3F31AEF357C00787EA4 = {
 			isa = PBXGroup;
 			children = (
+				5CF14D1F1B05583B00D2A7FD /* StoreKit.framework */,
 				5C3AA3FE1AEF357C00787EA4 /* Family Dinner Questions */,
 				5C3AA4141AEF357C00787EA4 /* Family Dinner QuestionsTests */,
 				5CE75DDE1AF013AA00F171F7 /* Family Dinner Questions WatchKit Extension */,
@@ -336,6 +340,9 @@
 						DevelopmentTeam = CM44H87VTD;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 						};

@@ -130,7 +130,6 @@ addMenuButton()
                 var theCardColor = theCardCat
                 var newinformation = stripCardCat
                 var newCard = DraggableView(frame: cardFrame, information: newinformation, color: theCardCat)
-                println("from the createcards function theCardCat=\(theCardCat)")
                 newCard.delegate = self;
                 allCards.addObject(newCard)
             }

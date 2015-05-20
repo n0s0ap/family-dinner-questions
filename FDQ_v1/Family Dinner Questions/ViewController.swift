@@ -19,6 +19,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateDeck", name: "theDeckHasUpdated", object: nil)
+        
+        func updateDeck(notification: NSNotification) {
+            println("booyakasha")
+        }
+        
+        func loadList(notification: NSNotification){
+            //load data here
+            
+            println("let's refresh the deck!")
+        }
+        
         var defaults = NSUserDefaults.standardUserDefaults()
         
         // Set a temporary time for Dinner Time if there isn't one set yet.

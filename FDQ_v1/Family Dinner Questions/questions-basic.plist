@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>one</string>
-	<string>two</string>
-	<string>three</string>
-	<string>four</string>
 	<string>What is your favorite color?</string>
 	<string>Did you do anything fun today?</string>
 	<string>What are you thankful for?</string>

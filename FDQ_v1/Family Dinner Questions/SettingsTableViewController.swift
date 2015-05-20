@@ -29,11 +29,32 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
+    //    Pack Management
+    @IBOutlet weak var packOneSwitch: UISwitch!
+    @IBAction func packOneSwitchState(sender: AnyObject) {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        if packOneSwitch.on {
+            defaults.setBool(true, forKey: "purchasedPackOne")
+            println("deal in Pack One please")
+            heyInquisitor()
+            
+        } else {
+            defaults.setBool(false, forKey: "purchasedPackOne")
+            println("don't inclued Pack One in the shuffle"  )
+            heyInquisitor()
+            NSNotificationCenter.defaultCenter().postNotificationName("theDeckHasUpdated", object: nil)
+        }
+    }
+    
+    //    End Pack Management
+    
     var datePickerHidden = true
     let theTimeFromSettings:NSDate! = NSUserDefaults.standardUserDefaults().valueForKey("notifyMeTime") as? NSDate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//      NSNotificationCenter.defaultCenter().postNotificationName("theDeckHasUpdated", object: nil)        
         datePickerChanged()
         var defaults = NSUserDefaults.standardUserDefaults()
         

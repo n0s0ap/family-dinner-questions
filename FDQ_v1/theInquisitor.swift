@@ -37,6 +37,13 @@ extension Array {
 func heyInquisitor() {
     println("The Inquisitor has been called")
     
+    var defaults = NSUserDefaults.standardUserDefaults()
+    defaults.setBool(true, forKey: "purchasedPackOne")
+    defaults.setBool(true, forKey: "purchasedPackTwo")
+    defaults.setBool(false, forKey: "purchasedPackThree")
+    defaults.setBool(false, forKey: "purchasedPackFour")
+    defaults.setBool(false, forKey: "purchasedPackFive")
+    
     
     //  PACK ONE
     let packOnepath = NSBundle.mainBundle().pathForResource("questions-basic", ofType: "plist")
@@ -54,8 +61,8 @@ func heyInquisitor() {
     var packTwoCleanCards = packTwoCards as! AnyObject as! [String]
     
     let packTwo = packTwoCleanCards.map({ (packTwoCleanCard) -> String in
-        return packTwoCleanCard.stringByAppendingString("CAT02")
-    })
+    return packTwoCleanCard.stringByAppendingString("CAT02")})
+    
     //  END PACK TWO
     
     //  PACK THREE
@@ -68,13 +75,36 @@ func heyInquisitor() {
     })
     //  END PACK THREE
     
-    let mixTheQuestions = (packOne + packTwo + packThree)
+    var mixTheQuestions = packOne
+    
+    //mixTheQuestions = (packOne + packTwo + packThree)
+    
+    if (defaults.boolForKey("purchasedPackTwo")==true){
+        mixTheQuestions.extend(packTwo)
+        println("I added pack two, just fyi")
+    }
+    
+    if (defaults.boolForKey("purchasedPackThree")==true){
+        mixTheQuestions.extend(packThree)
+        println("I added pack three, just fyi")
+    }
+    
+//    if (defaults.boolForKey("purchasedPackFour")==true){
+//        let mixTheQuestions = (mixTheQuestions + packFour)
+//    }
+//    
+//    if (defaults.boolForKey("purchasedPackFive")==true){
+//        let mixTheQuestions = (mixTheQuestions + packFive)
+//    }
+    
     let theQuestions = shuffleArray(mixTheQuestions)
+    
+    
     println("print theQuestions: \(theQuestions)")
     
     // Supporting things
     
-    var defaults = NSUserDefaults.standardUserDefaults()
+    
     defaults.setInteger(0, forKey: "theQuestionsIndex")
     defaults.setObject(theQuestions, forKey: "theQuestionsDeck")
 //    let theSavedQuestions:NSString! = defaults.stringForKey("theQuestionsDeck")
