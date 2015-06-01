@@ -8,18 +8,17 @@
 
 import UIKit
 
+let theDeckHasUpdatedKey = "com.n0s0ap.familydinnerquestions.theDeckHasUpdated"
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var startButton: UIButton!
-    
-   
-    
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateDeck", name: "theDeckHasUpdated", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateDeck", name: "theDeckHasUpdatedKey", object: nil)
+        
         
         func updateDeck(notification: NSNotification) {
             println("booyakasha")
@@ -27,7 +26,6 @@ class ViewController: UIViewController {
         
         func loadList(notification: NSNotification){
             //load data here
-            
             println("let's refresh the deck!")
         }
         

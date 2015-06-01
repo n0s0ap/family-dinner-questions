@@ -9,7 +9,9 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
-
+  
+    
+    
     @IBOutlet weak var notifyMeSwitch: UISwitch!
     @IBOutlet weak var notifyMeTime: UIDatePicker!
     @IBOutlet weak var detailLabel: UILabel!
@@ -42,10 +44,38 @@ class SettingsTableViewController: UITableViewController {
             defaults.setBool(false, forKey: "purchasedPackOne")
             println("don't inclued Pack One in the shuffle"  )
             heyInquisitor()
-            NSNotificationCenter.defaultCenter().postNotificationName("theDeckHasUpdated", object: nil)
+//            NSNotificationCenter.defaultCenter().postNotificationName("theDeckHasUpdatedKey", object: nil)
+        }
+    }
+    @IBOutlet weak var packTwoSwitch: UISwitch!
+    @IBAction func packTwoSwitchState(sender: AnyObject) {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        if packTwoSwitch.on {
+            defaults.setBool(true, forKey: "purchasedPackTwo")
+            println("deal in Pack Two please")
+            heyInquisitor()
+        } else {
+            defaults.setBool(false, forKey: "purchasedPackTwo")
+//            NSNotificationCenter.defaultCenter().postNotificationName("theDeckHasUpdatedKey", object: nil)
         }
     }
     
+    @IBOutlet weak var packThreeSwitch: UISwitch!
+    @IBAction func packThreeSwitchState(sender: AnyObject) {
+        var defaults = NSUserDefaults.standardUserDefaults()
+        if packThreeSwitch.on {
+            defaults.setBool(true, forKey: "purchasedPackThree")
+            println("deal in Pack Three please")
+            heyInquisitor()
+        } else {
+            defaults.setBool(false, forKey: "purchasedPackThree")
+//            NSNotificationCenter.defaultCenter().postNotificationName("theDeckHasUpdatedKey", object: nil)
+        }
+    }
+    
+    func updateDeck(notification: NSNotification) {
+        println("booyakasha")
+    }
     //    End Pack Management
     
     var datePickerHidden = true
