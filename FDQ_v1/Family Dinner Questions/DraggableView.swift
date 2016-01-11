@@ -46,7 +46,7 @@ class DraggableView:UIView{
         setTheInformation(information, color: color)
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -84,22 +84,22 @@ class DraggableView:UIView{
             
             case .Changed:
                 //%%% dictates rotation (see ROTATION_MAX and ROTATION_STRENGTH for details)
-                var rotationStrength = min(xFromCenter / ROTATION_STRENGTH, ROTATION_MAX);
+                let rotationStrength = min(xFromCenter / ROTATION_STRENGTH, ROTATION_MAX);
                 
                 //%%% degree change in radians
-                var rotationAngel = (ROTATION_ANGLE * rotationStrength);
+                let rotationAngel = (ROTATION_ANGLE * rotationStrength);
                 
                 //%%% amount the height changes when you move the card up to a certain point
-                var scale = max(1 - fabs(rotationStrength) / SCALE_STRENGTH, SCALE_MAX);
+                let scale = max(1 - fabs(rotationStrength) / SCALE_STRENGTH, SCALE_MAX);
                 
                 //%%% move the object's center by center + gesture coordinate
                 self.center = CGPointMake(self.originalPoint.x + xFromCenter, self.originalPoint.y + yFromCenter);
                 
                 //%%% rotate by certain amount
-                var transform = CGAffineTransformMakeRotation(rotationAngel);
+                let transform = CGAffineTransformMakeRotation(rotationAngel);
                 
                 //%%% scale by certain amount
-                var scaleTransform = CGAffineTransformScale(transform, scale, scale);
+                let scaleTransform = CGAffineTransformScale(transform, scale, scale);
                 
                 //%%% apply transformations
                 self.transform = scaleTransform;
@@ -183,8 +183,8 @@ class DraggableView:UIView{
     }
     
     func setTheInformation(information: String?, color: String!) {
-        var textFrameMargins = self.frame.size.width*0.1
-        var textFrameMarginsSubtract = textFrameMargins*2
+        let textFrameMargins = self.frame.size.width*0.1
+        let textFrameMarginsSubtract = textFrameMargins*2
         self.information.frame = CGRectMake(textFrameMargins, textFrameMargins, self.frame.size.width-textFrameMarginsSubtract, self.frame.size.height-textFrameMarginsSubtract)
         self.information.font = UIFont (name: "KlinicSlab-Bold", size: 30)
         self.information.textAlignment = .Center

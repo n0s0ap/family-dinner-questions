@@ -21,20 +21,20 @@ class ViewController: UIViewController {
         
         
         func updateDeck(notification: NSNotification) {
-            println("booyakasha")
+            print("booyakasha")
         }
         
         func loadList(notification: NSNotification){
             //load data here
-            println("let's refresh the deck!")
+            print("let's refresh the deck!")
         }
         
-        var defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = NSUserDefaults.standardUserDefaults()
         
         // Set a temporary time for Dinner Time if there isn't one set yet.
         if ((defaults.valueForKey("notifyMeTime")) == nil) {
             defaults.setValue(NSDate(), forKey: "notifyMeTime")
-            println("oh hey, I just filled in the temp time")
+            print("oh hey, I just filled in the temp time")
         }
         
         
@@ -55,10 +55,10 @@ class ViewController: UIViewController {
         
         // Shuffle the cards if you haven't yet. Trying to not shuffle every single time.
         if ((defaults.stringForKey("theQuestionsDeck")) != nil) {
-            println("don't shuffle")
+            print("don't shuffle")
             showCards()
         } else {
-            println("I'mma need a shuffle please")
+            print("I'mma need a shuffle please")
             heyInquisitor()
             showCards()
         }
@@ -71,12 +71,12 @@ class ViewController: UIViewController {
     }
     
     func showCards() {
-        var draggableViewBackground = DraggableViewBackground(frame: self.view.frame)
+        let draggableViewBackground = DraggableViewBackground(frame: self.view.frame)
         self.view.addSubview(draggableViewBackground);
     }
 
     func didPressStart(recognizer: UITapGestureRecognizer) {
-        var draggableViewBackground = DraggableViewBackground(frame: self.view.frame)
+        let draggableViewBackground = DraggableViewBackground(frame: self.view.frame)
         self.view.addSubview(draggableViewBackground);
     }
     
