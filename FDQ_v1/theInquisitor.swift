@@ -38,11 +38,7 @@ func heyInquisitor() {
     print("The Inquisitor has been called")
     
     let defaults = NSUserDefaults.standardUserDefaults()
-    defaults.setBool(true, forKey: "purchasedPackOne")
-    defaults.setBool(true, forKey: "purchasedPackTwo")
-    defaults.setBool(false, forKey: "purchasedPackThree")
-    defaults.setBool(false, forKey: "purchasedPackFour")
-    defaults.setBool(false, forKey: "purchasedPackFive")
+
     
     
     //  PACK ONE
@@ -100,7 +96,7 @@ func heyInquisitor() {
     let theQuestions = shuffleArray(mixTheQuestions)
     
     
-    print("print theQuestions: \(theQuestions)")
+    //print("print theQuestions: \(theQuestions)")
     
     // Supporting things
     

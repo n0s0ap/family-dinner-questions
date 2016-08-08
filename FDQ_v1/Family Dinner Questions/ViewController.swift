@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateDeck", name: "theDeckHasUpdatedKey", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("updateDeck"), name: "theDeckHasUpdatedKey", object: nil)
         
         
         func updateDeck(notification: NSNotification) {
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0.95, green:0.22, blue:0.35, alpha:1.0)
      
         
-        let singleTap = UITapGestureRecognizer(target: self, action: "didPressStart:")
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.didPressStart(_:)))
         startButton.addGestureRecognizer(singleTap)
 
         

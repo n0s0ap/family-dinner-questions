@@ -44,7 +44,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         super.layoutSubviews()
-        var defaults = NSUserDefaults.standardUserDefaults()
+//        var defaults = NSUserDefaults.standardUserDefaults()
         
         //setupView()
         setLoadedCardsCap()
