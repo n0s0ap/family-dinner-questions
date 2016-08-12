@@ -44,13 +44,15 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         super.layoutSubviews()
-//        var defaults = NSUserDefaults.standardUserDefaults()
-        
-        //setupView()
+        //var defaults = NSUserDefaults.standardUserDefaults()
         setLoadedCardsCap()
         createCards()
         displayCards()
+        //setupView()
+        
     }
+    
+   
     
    func setupView() {
 //        setBackgroundColor()
@@ -63,7 +65,7 @@ addMenuButton()
 
     
     func addLogo() {
-         let image = UIImage(named: "fdqLogo.png");
+        let image = UIImage(named: "fdqLogo.png");
         let someOffset = self.frame.width/2-image!.size.width/2
         let imageView = UIImageView(frame: CGRectMake(someOffset, 20, image!.size.width, image!.size.height));
        
@@ -81,10 +83,10 @@ addMenuButton()
         menuButton.frame = CGRectMake(self.frame.width-50, 30, settingsButtonImage!.size.width, settingsButtonImage!.size.height);
         menuButton.setImage(UIImage(named: "buttonSettings.png"), forState: .Normal)
         addSubview(menuButton)
-        menuButton.addTarget(self, action: "didPressMenuButton:", forControlEvents: UIControlEvents.TouchUpInside)
+//        menuButton.addTarget(self, action: "didPressMenuButton:", forControlEvents: UIControlEvents.TouchUpInside)
     }
     
- 
+    
     
     
     func addMessageButton() {
@@ -127,7 +129,7 @@ addMenuButton()
                 let substringIndex = stringLength - 5
                 let theCardCat = cardLabel.substringFromIndex(cardLabel.startIndex.advancedBy(substringIndex))
                 let stripCardCat = cardLabel.substringToIndex(cardLabel.startIndex.advancedBy(substringIndex))
-                var theCardColor = theCardCat
+                //var theCardColor = theCardCat
                 let newinformation = stripCardCat
                 let newCard = DraggableView(frame: cardFrame, information: newinformation, color: theCardCat)
                 newCard.delegate = self;
@@ -137,7 +139,7 @@ addMenuButton()
     }
 
     func displayCards() {
-        for(var i = 0; i < numLoadedCardsCap; i++) {
+        for(var i = 0; i < numLoadedCardsCap; i+=1) {
             loadACardAt(i)
         }
     }
@@ -152,7 +154,7 @@ addMenuButton()
 
     
     func processCardSwipe() {
-        loadedCards.removeObjectAtIndex(0)
+        //loadedCards.removeObjectAtIndex(0)
         
         if (moreCardsToLoad()) {
             loadNextCard()
@@ -176,7 +178,7 @@ addMenuButton()
         } else {
             addSubview(loadedCards[0] as! DraggableView)
         }
-        cardsLoadedIndex++;
+        cardsLoadedIndex += 1;
         //defaults.setInteger(cardsLoadedIndex, forKey: "theQuestionsDeckIndex")
         //var readTheQuestionsIndex = defaults.integerForKey("theQuestionsDeckIndex")
         //println("cardsLoadedIndex is \(cardsLoadedIndex), theQuestionsDeckIndex is \(readTheQuestionsIndex)")
