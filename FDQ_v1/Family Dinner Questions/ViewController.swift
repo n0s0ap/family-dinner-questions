@@ -50,7 +50,7 @@ class ViewController: UIViewController {
      
         
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.didPressStart(_:)))
-        startButton.addGestureRecognizer(singleTap)
+        //startButton.addGestureRecognizer(singleTap)
 
         
         // Shuffle the cards if you haven't yet. Trying to not shuffle every single time.
@@ -86,6 +86,7 @@ class ViewController: UIViewController {
     func didPressStart(recognizer: UITapGestureRecognizer) {
         let draggableViewBackground = DraggableViewBackground(frame: self.view.frame)
         self.view.addSubview(draggableViewBackground);
+        showCards()
     }
     
     override func viewWillAppear(animated: Bool) {
