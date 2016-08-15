@@ -41,7 +41,6 @@ class DraggableView:UIView{
         self.init(frame: frame)
         setupView()
         addOverlayView()
-
         addGestureRecognizer()
         setTheInformation(information, color: color)
     }
@@ -53,7 +52,8 @@ class DraggableView:UIView{
     func setupView() {
         
         self.backgroundColor = UIColor.whiteColor()
-        self.layer.shadowRadius = 3;
+        self.layer.cornerRadius = 6;
+        self.layer.shadowRadius = 6;
         self.layer.shadowOpacity = 0.1;
         self.layer.shadowOffset = CGSizeMake(1, 1);
         

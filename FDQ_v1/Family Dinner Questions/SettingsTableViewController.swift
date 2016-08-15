@@ -92,12 +92,9 @@ class SettingsTableViewController: UITableViewController {
             notifyMeSwitch.on = defaults.boolForKey("SwitchState")
         }
         
-        
-        
         notifyMeTime.datePickerMode = UIDatePickerMode.Time // 4- use time only
         let currentDate = NSDate()  //5 -  get the current date
         //notifyMeTime.minimumDate = currentDate  //6- set the current date/time as a minimum
-        
        
         print("I just got the time from settings and it is: \(theTimeFromSettings)")
         

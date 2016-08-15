@@ -11,7 +11,7 @@ import UIKit
 
 var defaults = NSUserDefaults.standardUserDefaults()
 
-let testArray:AnyObject? = defaults.objectForKey("theQuestionsDeck")
+var testArray:AnyObject? = defaults.objectForKey("theQuestionsDeck")
 var theSavedQuestions = testArray as AnyObject! as! [String]
 
 // var cardsLoadedIndex = defaults.integerForKey("theQuestionsDeckIndex")
@@ -31,7 +31,7 @@ class DraggableViewBackground: UIView, DraggableViewDelegate {
     
     
     
-    let exampleCardLabels = theSavedQuestions
+    var exampleCardLabels = theSavedQuestions
     var cardsLoadedIndex = 0
     var loadedCards = NSMutableArray()
     var allCards =  NSMutableArray()
@@ -121,8 +121,13 @@ addMenuButton()
     func createCards() {
         if (numLoadedCardsCap > 0) {
             let cardFrame = CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)
+            let UpdatedQuestionArray:AnyObject? = defaults.objectForKey("theQuestionsDeck")
+            let theUpdatedSavedQuestions = UpdatedQuestionArray as AnyObject! as! [String]
             
-            for cardLabel in exampleCardLabels {
+            let UpdatedQuestionLabels = theUpdatedSavedQuestions
+            print("I'm going to show you \(theUpdatedSavedQuestions)")
+            
+            for cardLabel in UpdatedQuestionLabels {
                 let stringLength = cardLabel.characters.count
                 let substringIndex = stringLength - 5
                 let theCardCat = cardLabel.substringFromIndex(cardLabel.startIndex.advancedBy(substringIndex))
@@ -137,7 +142,7 @@ addMenuButton()
     }
 
     func displayCards() {
-        for(var i = 0; i < numLoadedCardsCap; i++) {
+        for i in 0.stride(to: numLoadedCardsCap, by:1) {
             loadACardAt(i)
         }
     }
@@ -176,7 +181,7 @@ addMenuButton()
         } else {
             addSubview(loadedCards[0] as! DraggableView)
         }
-        cardsLoadedIndex++;
+        cardsLoadedIndex += 1;
         //defaults.setInteger(cardsLoadedIndex, forKey: "theQuestionsDeckIndex")
         //var readTheQuestionsIndex = defaults.integerForKey("theQuestionsDeckIndex")
         //println("cardsLoadedIndex is \(cardsLoadedIndex), theQuestionsDeckIndex is \(readTheQuestionsIndex)")

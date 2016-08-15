@@ -54,14 +54,16 @@ class ViewController: UIViewController {
 
         
         // Shuffle the cards if you haven't yet. Trying to not shuffle every single time.
-        if ((defaults.stringForKey("theQuestionsDeck")) != nil) {
-            print("don't shuffle")
-            showCards()
-        } else {
-            print("I'mma need a shuffle please")
-            heyInquisitor()
-            showCards()
-        }
+//        if ((defaults.stringForKey("theQuestionsDeck")) != nil) {
+//            print("don't shuffle")
+//            showCards()
+//        } else {
+//            print("I'mma need a shuffle please")
+//            heyInquisitor()
+//            showCards()
+//        }
+        
+        
 
         if (defaults.boolForKey("notifyMeSwitchState")==true){
             notifyAtDinnerTime()
@@ -74,12 +76,25 @@ class ViewController: UIViewController {
         let draggableViewBackground = DraggableViewBackground(frame: self.view.frame)
         self.view.addSubview(draggableViewBackground);
     }
+    
+    func removeCards() {
+        for view in self.view.subviews{
+            view.removeFromSuperview()
+        }
+    }
 
     func didPressStart(recognizer: UITapGestureRecognizer) {
         let draggableViewBackground = DraggableViewBackground(frame: self.view.frame)
         self.view.addSubview(draggableViewBackground);
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidLoad()
+        heyInquisitor()
+        removeCards()
+        showCards()
+        print("yes, view will appear is working")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

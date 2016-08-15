@@ -38,8 +38,6 @@ func heyInquisitor() {
     print("The Inquisitor has been called")
     
     let defaults = NSUserDefaults.standardUserDefaults()
-
-    
     
     //  PACK ONE
     let packOnepath = NSBundle.mainBundle().pathForResource("questions-basic", ofType: "plist")
@@ -93,7 +91,7 @@ func heyInquisitor() {
 //        let mixTheQuestions = (mixTheQuestions + packFive)
 //    }
     
-    let theQuestions = shuffleArray(mixTheQuestions)
+    var theQuestions = shuffleArray(mixTheQuestions)
     
     
     //print("print theQuestions: \(theQuestions)")
@@ -103,16 +101,12 @@ func heyInquisitor() {
     
     defaults.setInteger(0, forKey: "theQuestionsIndex")
     defaults.setObject(theQuestions, forKey: "theQuestionsDeck")
-//    let theSavedQuestions:NSString! = defaults.stringForKey("theQuestionsDeck")
+    var theSavedQuestions:NSString! = defaults.stringForKey("theQuestionsDeck")
 
-    if let testArray:AnyObject? = defaults.objectForKey("theQuestionsDeck") {
-        var theSavedQuestions = testArray as AnyObject! as! [String]
-        //println("the saved deck is \(theSavedQuestions)")
-    }
-    
-    
-
-    
-    
+//    if let testArray:AnyObject? = defaults.objectForKey("theQuestionsDeck") {
+//        var theSavedQuestions = testArray as AnyObject! as! [String]
+//        print("the saved deck is \(theSavedQuestions)")
+//    }
+ 
     
 }
