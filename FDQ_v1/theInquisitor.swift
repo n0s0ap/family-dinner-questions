@@ -91,7 +91,7 @@ func heyInquisitor() {
 //        let mixTheQuestions = (mixTheQuestions + packFive)
 //    }
     
-    var theQuestions = shuffleArray(mixTheQuestions)
+    let theQuestions = shuffleArray(mixTheQuestions)
     
     
     //print("print theQuestions: \(theQuestions)")
@@ -101,7 +101,6 @@ func heyInquisitor() {
     
     defaults.setInteger(0, forKey: "theQuestionsIndex")
     defaults.setObject(theQuestions, forKey: "theQuestionsDeck")
-    var theSavedQuestions:NSString! = defaults.stringForKey("theQuestionsDeck")
 
 //    if let testArray:AnyObject? = defaults.objectForKey("theQuestionsDeck") {
 //        var theSavedQuestions = testArray as AnyObject! as! [String]

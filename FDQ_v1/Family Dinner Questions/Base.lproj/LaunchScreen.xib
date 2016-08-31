@@ -11,28 +11,26 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2015 Ben Lew. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="21"/>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="FDQ-logo-full" translatesAutoresizingMaskIntoConstraints="NO" id="gAD-nf-fjS">
+                    <rect key="frame" x="112" y="127" width="257" height="225"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="  Copyright (c) 2015 Ben Lew. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
+                    <rect key="frame" x="102" y="457" width="276" height="15"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="sw8-f1-d9q">
-                    <rect key="frame" x="108" y="106" width="264" height="267"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="264" id="DdF-n0-GpA"/>
-                        <constraint firstAttribute="height" constant="267" id="mKg-I8-qFg"/>
-                    </constraints>
-                </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="1" green="0.36470588235294116" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="PP3-KM-Zgu"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="top" secondItem="sw8-f1-d9q" secondAttribute="bottom" constant="66" id="Tq6-3Q-Zsm"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UFt-XJ-L1R"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="centerX" secondItem="sw8-f1-d9q" secondAttribute="centerX" id="de9-Kp-c2a"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="gzS-Am-mbB"/>
-                <constraint firstItem="sw8-f1-d9q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="106" id="l0U-o6-jTD"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3Lz-ok-HRB"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="top" secondItem="gAD-nf-fjS" secondAttribute="bottom" constant="8" symbolic="YES" id="Apy-GI-LCa"/>
+                <constraint firstItem="gAD-nf-fjS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KMj-1o-ki3"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="top" secondItem="gAD-nf-fjS" secondAttribute="bottom" constant="8" symbolic="YES" id="O5S-mU-XgO"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="cMr-XF-0Tv"/>
+                <constraint firstAttribute="trailing" secondItem="8ie-xW-0ye" secondAttribute="trailing" constant="20" symbolic="YES" id="gaD-iG-HUF"/>
+                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="jDq-3C-3dB"/>
+                <constraint firstItem="gAD-nf-fjS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jOS-Os-XnP"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -40,6 +38,6 @@
         </view>
     </objects>
     <resources>
-        <image name="launch" width="320" height="568"/>
+        <image name="FDQ-logo-full" width="257" height="225"/>
     </resources>
 </document>

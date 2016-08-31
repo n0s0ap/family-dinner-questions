@@ -17,9 +17,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("updateDeck"), name: "theDeckHasUpdatedKey", object: nil)
-        
-        
         func updateDeck(notification: NSNotification) {
             print("booyakasha")
         }
@@ -45,26 +42,7 @@ class ViewController: UIViewController {
         let logo = UIImage(named: "fdqLogo.png")
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
-        //self.navigationController?.navigationBar.translucent = true
-        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.95, green:0.22, blue:0.35, alpha:1.0)
-     
         
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(ViewController.didPressStart(_:)))
-        //startButton.addGestureRecognizer(singleTap)
-
-        
-        // Shuffle the cards if you haven't yet. Trying to not shuffle every single time.
-//        if ((defaults.stringForKey("theQuestionsDeck")) != nil) {
-//            print("don't shuffle")
-//            showCards()
-//        } else {
-//            print("I'mma need a shuffle please")
-//            heyInquisitor()
-//            showCards()
-//        }
-        
-        
-
         if (defaults.boolForKey("notifyMeSwitchState")==true){
             notifyAtDinnerTime()
         } else {

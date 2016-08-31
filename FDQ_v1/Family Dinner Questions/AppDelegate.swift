@@ -16,7 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [UIUserNotificationType.Sound, UIUserNotificationType.Alert, UIUserNotificationType.Badge], categories: nil))
+        
+        let navigationBarAppearace = UINavigationBar.appearance()
+        
+        //navigationBarAppearace.tintColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0)
+        navigationBarAppearace.barTintColor = UIColor(red:1.00, green:0.36, blue:0.36, alpha:1.0)
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        //navigationBarAppearace.barStyle = UIBarStyle.BlackTranslucent
+        navigationBarAppearace.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        navigationBarAppearace.shadowImage = UIImage()
         // Override point for customization after application launch.
+        navigationBarAppearace.frame=CGRectMake(0, 0, 320, 50)
 
         return true
     }

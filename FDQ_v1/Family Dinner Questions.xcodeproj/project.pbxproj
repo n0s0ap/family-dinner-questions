@@ -367,7 +367,7 @@
 					};
 					5CE75DDC1AF013AA00F171F7 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = CM44H87VTD;
+						DevelopmentTeam = A9UVS4NUTK;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -686,6 +686,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Family Dinner Questions WatchKit Extension/Family Dinner Questions WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -708,6 +709,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Family Dinner Questions WatchKit Extension/Family Dinner Questions WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Family Dinner Questions WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.n0s0ap.familydinnerquestions.Family-Dinner-Questions.watchkitapp.watchkitextension";

@@ -75,7 +75,7 @@ addMenuButton()
     }
     
     func setBackgroundColor() {
-        self.backgroundColor = UIColor(red:0.949, green:0.22, blue:0.353, alpha:1);
+        self.backgroundColor = UIColor(red:1.00, green:0.36, blue:0.36, alpha:1.0);
     }
     
     func addMenuButton() {
