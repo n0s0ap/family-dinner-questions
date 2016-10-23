@@ -17,50 +17,50 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var notifyMeTime: UIDatePicker!
     @IBOutlet weak var detailLabel: UILabel!
     
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
 
-    @IBAction func packOneSwitchState(sender: UISwitch) {
+    @IBAction func packOneSwitchState(_ sender: UISwitch) {
         
-        if sender.on {
+        if sender.isOn {
             
-            defaults.setBool(true, forKey: "purchasedPackOne")
+            defaults.set(true, forKey: "purchasedPackOne")
             heyInquisitor()
             print("Mix in pack ONE")
             
         }else {
             
-           defaults.setBool(false, forKey: "purchasedPackOne")
+           defaults.set(false, forKey: "purchasedPackOne")
             heyInquisitor()
             print("Take out ONE")
         }
     }
     
-    @IBAction func packTwoSwitchState(sender: UISwitch) {
+    @IBAction func packTwoSwitchState(_ sender: UISwitch) {
         
-        if sender.on {
+        if sender.isOn {
             
-            defaults.setBool(true, forKey: "purchasedPackTwo")
+            defaults.set(true, forKey: "purchasedPackTwo")
             heyInquisitor()
             print("Mix in pack TWO")
         }else {
             
-            defaults.setBool(false, forKey: "purchasedPackTwo")
+            defaults.set(false, forKey: "purchasedPackTwo")
             heyInquisitor()
             print("Take out TWO")
         }
     }
     
-    @IBAction func packThreeSwitchState(sender: UISwitch) {
+    @IBAction func packThreeSwitchState(_ sender: UISwitch) {
         
-        if sender.on {
+        if sender.isOn {
             
-            defaults.setBool(true, forKey: "purchasedPackThree")
+            defaults.set(true, forKey: "purchasedPackThree")
             heyInquisitor()
             print("Mix in pack THREE")
         }else {
             
-            defaults.setBool(false, forKey: "purchasedPackThree")
+            defaults.set(false, forKey: "purchasedPackThree")
             heyInquisitor()
             print("Take out THREE")
         }
@@ -68,14 +68,14 @@ class SettingsTableViewController: UITableViewController {
     
 
     
-    func updateDeck(notification: NSNotification) {
+    func updateDeck(_ notification: Notification) {
         print("booyakasha")
     }
     //    End Pack Management
     
     
     var datePickerHidden = true
-    let theTimeFromSettings:NSDate! = NSUserDefaults.standardUserDefaults().valueForKey("notifyMeTime") as? NSDate!
+    let theTimeFromSettings:Date! = UserDefaults.standard.value(forKey: "notifyMeTime") as? Date!
 
     
     override func viewDidLoad() {
@@ -87,25 +87,25 @@ class SettingsTableViewController: UITableViewController {
         
         datePickerChanged()
         
-        detailLabel.text = NSDateFormatter.localizedStringFromDate(theTimeFromSettings, dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
-        if (defaults.objectForKey("SwitchState") != nil) {
-            notifyMeSwitch.on = defaults.boolForKey("SwitchState")
+        detailLabel.text = DateFormatter.localizedString(from: theTimeFromSettings, dateStyle: DateFormatter.Style.none, timeStyle: DateFormatter.Style.short)
+        if (defaults.object(forKey: "SwitchState") != nil) {
+            notifyMeSwitch.isOn = defaults.bool(forKey: "SwitchState")
         }
         
-        notifyMeTime.datePickerMode = UIDatePickerMode.Time // 4- use time only
-        let currentDate = NSDate()  //5 -  get the current date
+        notifyMeTime.datePickerMode = UIDatePickerMode.time // 4- use time only
+        let currentDate = Date()  //5 -  get the current date
         //notifyMeTime.minimumDate = currentDate  //6- set the current date/time as a minimum
        
         print("I just got the time from settings and it is: \(theTimeFromSettings)")
         
         
-        if ((defaults.valueForKey("notifyMeTime")) != nil){
+        if ((defaults.value(forKey: "notifyMeTime")) != nil){
             notifyMeTime.date = theTimeFromSettings
         } else {
             defaults.setValue(notifyMeTime.date, forKey: "notifyMeTime")
         }
         
-        let packOneMixSetting = defaults.boolForKey("purchasedPackOne")
+        let packOneMixSetting = defaults.bool(forKey: "purchasedPackOne")
         
        print("yeah boi\(packOneMixSetting)")
         print("the time from the picker is \(currentDate)")
@@ -120,8 +120,8 @@ class SettingsTableViewController: UITableViewController {
     
     
     
-    private func setPackOneMixSetting() {
-        let packOneMixSetting = defaults.boolForKey("purchasedPackOne")
+    fileprivate func setPackOneMixSetting() {
+        let packOneMixSetting = defaults.bool(forKey: "purchasedPackOne")
         if packOneMixSetting {
             self.packOneSwitch.setOn(true, animated:true)
         } else {
@@ -129,8 +129,8 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
-    private func setPackTwoMixSetting() {
-        let packTwoMixSetting = defaults.boolForKey("purchasedPackTwo")
+    fileprivate func setPackTwoMixSetting() {
+        let packTwoMixSetting = defaults.bool(forKey: "purchasedPackTwo")
         if packTwoMixSetting {
             self.packTwoSwitch.setOn(true, animated:true)
         } else {
@@ -138,8 +138,8 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
-    private func setPackThreeMixSetting() {
-        let packThreeMixSetting = defaults.boolForKey("purchasedPackThree")
+    fileprivate func setPackThreeMixSetting() {
+        let packThreeMixSetting = defaults.bool(forKey: "purchasedPackThree")
         if packThreeMixSetting {
             self.packThreeSwitch.setOn(true, animated:true)
         } else {
@@ -148,11 +148,11 @@ class SettingsTableViewController: UITableViewController {
     }
     
     func datePickerChanged () {
-        detailLabel.text = NSDateFormatter.localizedStringFromDate(notifyMeTime.date, dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+        detailLabel.text = DateFormatter.localizedString(from: notifyMeTime.date, dateStyle: DateFormatter.Style.none, timeStyle: DateFormatter.Style.short)
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 && indexPath.row == 1 {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath as NSIndexPath).section == 0 && (indexPath as NSIndexPath).row == 1 {
             toggleDatepicker()
         }
     }
@@ -167,21 +167,21 @@ class SettingsTableViewController: UITableViewController {
         tableView.endUpdates()
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if datePickerHidden && indexPath.section == 0 && indexPath.row == 2 {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if datePickerHidden && (indexPath as NSIndexPath).section == 0 && (indexPath as NSIndexPath).row == 2 {
             return 0
         }
         else {
-            return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+            return super.tableView(tableView, heightForRowAt: indexPath)
         }
     }
 
-    @IBAction func notifyMeTimeSet(sender: UIDatePicker) {
+    @IBAction func notifyMeTimeSet(_ sender: UIDatePicker) {
         defaults.setValue(notifyMeTime.date, forKey: "notifyMeTime")
-        let timechanged = NSDateFormatter.localizedStringFromDate(notifyMeTime.date, dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+        let timechanged = DateFormatter.localizedString(from: notifyMeTime.date, dateStyle: DateFormatter.Style.none, timeStyle: DateFormatter.Style.short)
         print("changed the time to \(timechanged)")
         datePickerChanged()
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        UIApplication.shared.cancelAllLocalNotifications()
         notifyAtDinnerTime()
     }
     

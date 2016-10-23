@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-var defaults = NSUserDefaults.standardUserDefaults()
+var defaults = UserDefaults.standard
 
-var testArray:AnyObject? = defaults.objectForKey("theQuestionsDeck")
+var testArray:AnyObject? = defaults.object(forKey: "theQuestionsDeck") as AnyObject?
 var theSavedQuestions = testArray as AnyObject! as! [String]
 
 // var cardsLoadedIndex = defaults.integerForKey("theQuestionsDeckIndex")
@@ -67,7 +67,7 @@ addMenuButton()
     func addLogo() {
         let image = UIImage(named: "fdqLogo.png");
         let someOffset = self.frame.width/2-image!.size.width/2
-        let imageView = UIImageView(frame: CGRectMake(someOffset, 20, image!.size.width, image!.size.height));
+        let imageView = UIImageView(frame: CGRect(x: someOffset, y: 20, width: image!.size.width, height: image!.size.height));
        
         imageView.image = image;
         self.addSubview(imageView);
@@ -80,8 +80,8 @@ addMenuButton()
     
     func addMenuButton() {
         let settingsButtonImage = UIImage(named: "buttonSettings.png")
-        menuButton.frame = CGRectMake(self.frame.width-50, 30, settingsButtonImage!.size.width, settingsButtonImage!.size.height);
-        menuButton.setImage(UIImage(named: "buttonSettings.png"), forState: .Normal)
+        menuButton.frame = CGRect(x: self.frame.width-50, y: 30, width: settingsButtonImage!.size.width, height: settingsButtonImage!.size.height);
+        menuButton.setImage(UIImage(named: "buttonSettings.png"), for: UIControlState())
         addSubview(menuButton)
 //        menuButton.addTarget(self, action: "didPressMenuButton:", forControlEvents: UIControlEvents.TouchUpInside)
     }
@@ -90,8 +90,8 @@ addMenuButton()
     
     
     func addMessageButton() {
-        self.messageButton.frame = CGRectMake(284, 34, 18, 18)
-        self.messageButton.setImage(UIImage(named: "messageButton"), forState: .Normal)
+        self.messageButton.frame = CGRect(x: 284, y: 34, width: 18, height: 18)
+        self.messageButton.setImage(UIImage(named: "messageButton"), for: UIControlState())
         self.addSubview(messageButton)
     }
 //
@@ -122,8 +122,8 @@ addMenuButton()
     
     func createCards() {
         if (numLoadedCardsCap > 0) {
-            let cardFrame = CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)
-            let UpdatedQuestionArray:AnyObject? = defaults.objectForKey("theQuestionsDeck")
+            let cardFrame = CGRect(x: (self.frame.size.width - CARD_WIDTH)/2, y: (self.frame.size.height - CARD_HEIGHT)/2, width: CARD_WIDTH, height: CARD_HEIGHT)
+            let UpdatedQuestionArray:AnyObject? = defaults.object(forKey: "theQuestionsDeck") as AnyObject?
             let theUpdatedSavedQuestions = UpdatedQuestionArray as AnyObject! as! [String]
             
             let UpdatedQuestionLabels = theUpdatedSavedQuestions
@@ -132,28 +132,28 @@ addMenuButton()
             for cardLabel in UpdatedQuestionLabels {
                 let stringLength = cardLabel.characters.count
                 let substringIndex = stringLength - 5
-                let theCardCat = cardLabel.substringFromIndex(cardLabel.startIndex.advancedBy(substringIndex))
-                let stripCardCat = cardLabel.substringToIndex(cardLabel.startIndex.advancedBy(substringIndex))
+                let theCardCat = cardLabel.substring(from: cardLabel.characters.index(cardLabel.startIndex, offsetBy: substringIndex))
+                let stripCardCat = cardLabel.substring(to: cardLabel.characters.index(cardLabel.startIndex, offsetBy: substringIndex))
                 //var theCardColor = theCardCat
                 let newinformation = stripCardCat
                 let newCard = DraggableView(frame: cardFrame, information: newinformation, color: theCardCat)
                 newCard.delegate = self;
-                allCards.addObject(newCard)
+                allCards.add(newCard)
             }
         }
     }
 
     func displayCards() {
-        for i in 0.stride(to: numLoadedCardsCap, by:1) {
+        for i in stride(from: 0, to: numLoadedCardsCap, by:1) {
             loadACardAt(i)
         }
     }
     
-    func cardSwipedLeft(card: DraggableView) {
+    func cardSwipedLeft(_ card: DraggableView) {
         processCardSwipe()
     }
     
-    func cardSwipedRight(card: DraggableView) {
+    func cardSwipedRight(_ card: DraggableView) {
         processCardSwipe()
     }
 
@@ -175,8 +175,8 @@ addMenuButton()
         loadACardAt(cardsLoadedIndex)
     }
     
-    func loadACardAt(index: Int) {
-        loadedCards.addObject(allCards[index])
+    func loadACardAt(_ index: Int) {
+        loadedCards.add(allCards[index])
         if (loadedCards.count > 1) {
             insertSubview(loadedCards[loadedCards.count-1] as! DraggableView, belowSubview: loadedCards[loadedCards.count-2] as! DraggableView)
             // is there a way to define the array with UIView elements so I don't have to cast?

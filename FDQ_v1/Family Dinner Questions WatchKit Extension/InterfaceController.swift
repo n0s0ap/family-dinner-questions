@@ -25,8 +25,8 @@ class InterfaceController: WKInterfaceController {
     
     
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
     }
     
     override func willActivate() {
@@ -45,11 +45,11 @@ class InterfaceController: WKInterfaceController {
         let theShuffleConstant = "getTheShuffle"
         
         let appGroupID = "group.com.familydinnerquestions"
-        let defaults = NSUserDefaults(suiteName: appGroupID)
+        let defaults = UserDefaults(suiteName: appGroupID)
         
        
         
-        let testArray : AnyObject? = defaults!.objectForKey(theShuffleConstant)
+        let testArray : AnyObject? = defaults!.object(forKey: theShuffleConstant) as AnyObject?
         let theQuestions : [NSString] = testArray! as! [NSString]
             
         
@@ -57,7 +57,7 @@ class InterfaceController: WKInterfaceController {
         let names = theQuestions.map { x in "page" }
         //println("\(theFive)")
         
-        presentControllerWithNames(names, contexts: theQuestions)
+        presentController(withNames: names, contexts: theQuestions)
     }
     
     

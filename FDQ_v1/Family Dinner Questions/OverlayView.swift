@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 enum OverlayViewMode {
-    case None
-    case Left
-    case Right
+    case none
+    case left
+    case right
 }
 
 
 class OverlayView:UIView {
     var imageView = UIImageView()
-    var mode = OverlayViewMode.None
+    var mode = OverlayViewMode.none
     
     override init(frame: CGRect) {
         super.init(frame: frame);
@@ -32,7 +32,7 @@ class OverlayView:UIView {
     }
     
     func setView() {
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
     }
     
     func addImageView() {
@@ -42,14 +42,14 @@ class OverlayView:UIView {
     }
     
     func setImageViewFrame() {
-        imageView.frame = CGRectMake(50, 50, 100, 100)
+        imageView.frame = CGRect(x: 50, y: 50, width: 100, height: 100)
 
     }
-    func setTheImageView(buttonString: String) {
+    func setTheImageView(_ buttonString: String) {
         imageView.image = UIImage(named: buttonString)
     }
     
-    func setMode(mode: OverlayViewMode) {
+    func setMode(_ mode: OverlayViewMode) {
         setTheImageView("launch")
         if (self.mode == mode) {
             return;

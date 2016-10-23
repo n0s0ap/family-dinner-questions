@@ -51,38 +51,38 @@ class DraggableView:UIView{
 
     func setupView() {
         
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
         self.layer.cornerRadius = 6;
         self.layer.shadowRadius = 6;
         self.layer.shadowOpacity = 0.1;
-        self.layer.shadowOffset = CGSizeMake(1, 1);
+        self.layer.shadowOffset = CGSize(width: 1, height: 1);
         
         
     }
    
     
     func addOverlayView() {
-        let overlayViewFrame = CGRectMake(self.frame.size.width/2-100, 0, 100, 100)
+        let overlayViewFrame = CGRect(x: self.frame.size.width/2-100, y: 0, width: 100, height: 100)
         overlayView = OverlayView(frame: overlayViewFrame)
         addSubview(overlayView!)
     }
 
     func addGestureRecognizer() {
-        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: "beingDragged:")
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(DraggableView.beingDragged(_:)))
         self.addGestureRecognizer(panGestureRecognizer)
     }
     
-    func beingDragged(gestureRecognizer: UIPanGestureRecognizer) {
-        xFromCenter = gestureRecognizer.translationInView(self).x;
-        yFromCenter = gestureRecognizer.translationInView(self).y;
+    func beingDragged(_ gestureRecognizer: UIPanGestureRecognizer) {
+        xFromCenter = gestureRecognizer.translation(in: self).x;
+        yFromCenter = gestureRecognizer.translation(in: self).y;
         
         switch (gestureRecognizer.state) {
-            case .Began:
+            case .began:
                 self.originalPoint = self.center;
                 break;
             
             
-            case .Changed:
+            case .changed:
                 //%%% dictates rotation (see ROTATION_MAX and ROTATION_STRENGTH for details)
                 let rotationStrength = min(xFromCenter / ROTATION_STRENGTH, ROTATION_MAX);
                 
@@ -93,20 +93,20 @@ class DraggableView:UIView{
                 let scale = max(1 - fabs(rotationStrength) / SCALE_STRENGTH, SCALE_MAX);
                 
                 //%%% move the object's center by center + gesture coordinate
-                self.center = CGPointMake(self.originalPoint.x + xFromCenter, self.originalPoint.y + yFromCenter);
+                self.center = CGPoint(x: self.originalPoint.x + xFromCenter, y: self.originalPoint.y + yFromCenter);
                 
                 //%%% rotate by certain amount
-                let transform = CGAffineTransformMakeRotation(rotationAngel);
+                let transform = CGAffineTransform(rotationAngle: rotationAngel);
                 
                 //%%% scale by certain amount
-                let scaleTransform = CGAffineTransformScale(transform, scale, scale);
+                let scaleTransform = transform.scaledBy(x: scale, y: scale);
                 
                 //%%% apply transformations
                 self.transform = scaleTransform;
                 
                  self.updateOverlay(xFromCenter)
                 break;
-            case .Ended:
+            case .ended:
                 afterSwipeAction()
             break;
             default:
@@ -146,9 +146,9 @@ class DraggableView:UIView{
         animateCardOutTo(leftEdge)
     }
     
-    func animateCardOutTo(edge: CGFloat) {
-        let finishPoint = CGPointMake(edge, 2*yFromCenter + self.originalPoint.y)
-        UIView.animateWithDuration(0.3, animations: {
+    func animateCardOutTo(_ edge: CGFloat) {
+        let finishPoint = CGPoint(x: edge, y: 2*yFromCenter + self.originalPoint.y)
+        UIView.animate(withDuration: 0.3, animations: {
             self.center = finishPoint;
             }, completion: {
                 (value: Bool) in
@@ -158,19 +158,19 @@ class DraggableView:UIView{
     }
 
     func animateCardBack() {
-        UIView.animateWithDuration(0.3, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.center = self.originalPoint;
-            self.transform = CGAffineTransformMakeRotation(0);
+            self.transform = CGAffineTransform(rotationAngle: 0);
                 self.overlayView?.alpha = 0;
             }
         )
     }
     
-    func updateOverlay(distance: CGFloat) {
+    func updateOverlay(_ distance: CGFloat) {
         if (distance > 0) {
-            overlayView?.setMode(.Right)
+            overlayView?.setMode(.right)
         } else {
-            overlayView?.setMode(.Left)
+            overlayView?.setMode(.left)
         }
         overlayView?.alpha = min(fabs(distance)/100, 0.4)
     }
@@ -182,25 +182,25 @@ class DraggableView:UIView{
         leftAction()
     }
     
-    func setTheInformation(information: String?, color: String!) {
+    func setTheInformation(_ information: String?, color: String!) {
         let textFrameMargins = self.frame.size.width*0.1
         let textFrameMarginsSubtract = textFrameMargins*2
-        self.information.frame = CGRectMake(textFrameMargins, textFrameMargins, self.frame.size.width-textFrameMarginsSubtract, self.frame.size.height-textFrameMarginsSubtract)
+        self.information.frame = CGRect(x: textFrameMargins, y: textFrameMargins, width: self.frame.size.width-textFrameMarginsSubtract, height: self.frame.size.height-textFrameMarginsSubtract)
         self.information.font = UIFont (name: "KlinicSlab-Bold", size: 30)
-        self.information.textAlignment = .Center
-        self.information.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        self.information.textAlignment = .center
+        self.information.lineBreakMode = NSLineBreakMode.byWordWrapping
         self.information.numberOfLines = 0
-        self.information.backgroundColor = UIColor.whiteColor()
+        self.information.backgroundColor = UIColor.white
         self.information.text = information
 
         if (color=="CAT01") {
-            self.information.textColor = UIColor.blackColor()
+            self.information.textColor = UIColor.black
         } else if (color=="CAT02") {
-            self.information.textColor = UIColor.brownColor()
+            self.information.textColor = UIColor.brown
         } else if (color=="CAT03") {
-            self.information.textColor = UIColor.blueColor()
+            self.information.textColor = UIColor.blue
         } else {
-            self.information.textColor = UIColor.blackColor()
+            self.information.textColor = UIColor.black
         }
         
         
@@ -212,6 +212,6 @@ class DraggableView:UIView{
 }
 
 protocol DraggableViewDelegate {
-    func cardSwipedLeft(card: DraggableView)
-    func cardSwipedRight(card: DraggableView)
+    func cardSwipedLeft(_ card: DraggableView)
+    func cardSwipedRight(_ card: DraggableView)
 }

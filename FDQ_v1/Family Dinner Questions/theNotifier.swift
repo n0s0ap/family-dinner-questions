@@ -12,21 +12,21 @@ import Foundation
 func notifyAtDinnerTime() {
     print("Updating the Notification")
     // UIApplication.sharedApplication().cancelAllLocalNotifications()
-    let defaults = NSUserDefaults.standardUserDefaults()
-    let theTimeFromSettings:NSDate! = defaults.valueForKey("notifyMeTime") as? NSDate!
+    let defaults = UserDefaults.standard
+    let theTimeFromSettings:Date! = defaults.value(forKey: "notifyMeTime") as? Date!
     print("dinner time is set at \(theTimeFromSettings)")
     
     let questionOfftheTop = theSavedQuestions[0]
     
     let localNotification:UILocalNotification = UILocalNotification()
-    localNotification.timeZone = NSTimeZone.localTimeZone()
+    localNotification.timeZone = TimeZone.autoupdatingCurrent
     localNotification.alertAction = "see more questions"
     localNotification.alertBody = "Time for a dinner question: \(questionOfftheTop)"
     localNotification.soundName = UILocalNotificationDefaultSoundName
     localNotification.fireDate = theTimeFromSettings
-    localNotification.repeatInterval = NSCalendarUnit.Day
-    UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-    let theScheduledNotifications = UIApplication.sharedApplication().scheduledLocalNotifications
+    localNotification.repeatInterval = NSCalendar.Unit.day
+    UIApplication.shared.scheduleLocalNotification(localNotification)
+    let theScheduledNotifications = UIApplication.shared.scheduledLocalNotifications
     print("the schedule is: \(theScheduledNotifications)")
     
 }

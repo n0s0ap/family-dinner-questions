@@ -10,8 +10,9 @@ import Foundation
 
 
 
-func shuffleArray<T>(var array: [T]) -> [T] {
-    for index in Array((0..<array.count).reverse()) {
+func shuffleArray<T>(_ array: [T]) -> [T] {
+    var array = array
+    for index in Array((0..<array.count).reversed()) {
         let randomIndex = Int(arc4random_uniform(UInt32(index)))
         (array[index], array[randomIndex]) = (array[randomIndex], array[index])
     }
@@ -21,7 +22,7 @@ func shuffleArray<T>(var array: [T]) -> [T] {
 
 extension Array {
     
-    func forEach(iterator: (Element) -> Void) -> Array {
+    func forEach(_ iterator: (Element) -> Void) -> Array {
         for item in self {
             iterator(item)
         }
@@ -37,35 +38,35 @@ extension Array {
 func heyInquisitor() {
     print("The Inquisitor has been called")
     
-    let defaults = NSUserDefaults.standardUserDefaults()
+    let defaults = UserDefaults.standard
     
     //  PACK ONE
-    let packOnepath = NSBundle.mainBundle().pathForResource("questions-basic", ofType: "plist")
+    let packOnepath = Bundle.main.path(forResource: "questions-basic", ofType: "plist")
     let packOneCards = NSMutableArray(contentsOfFile: packOnepath!)
-    let packOneCleanCards = packOneCards as! AnyObject as! [String]
+    let packOneCleanCards = packOneCards as AnyObject as! [String]
 
     let packOne = packOneCleanCards.map({ (packOneCleanCard) -> String in
-        return packOneCleanCard.stringByAppendingString("CAT01")
+        return packOneCleanCard + "CAT01"
     })
     //  END PACK ONE
     
     //  PACK TWO
-    let packTwopath = NSBundle.mainBundle().pathForResource("questions-travel", ofType: "plist")
+    let packTwopath = Bundle.main.path(forResource: "questions-travel", ofType: "plist")
     let packTwoCards = NSMutableArray(contentsOfFile: packTwopath!)
-    let packTwoCleanCards = packTwoCards as! AnyObject as! [String]
+    let packTwoCleanCards = packTwoCards as AnyObject as! [String]
     
     let packTwo = packTwoCleanCards.map({ (packTwoCleanCard) -> String in
-    return packTwoCleanCard.stringByAppendingString("CAT02")})
+    return packTwoCleanCard + "CAT02"})
     
     //  END PACK TWO
     
     //  PACK THREE
-    let packThreepath = NSBundle.mainBundle().pathForResource("questions-food", ofType: "plist")
+    let packThreepath = Bundle.main.path(forResource: "questions-food", ofType: "plist")
     let packThreeCards = NSMutableArray(contentsOfFile: packThreepath!)
-    let packThreeCleanCards = packThreeCards as! AnyObject as! [String]
+    let packThreeCleanCards = packThreeCards as AnyObject as! [String]
     
     let packThree = packThreeCleanCards.map({ (packThreeCleanCard) -> String in
-        return packThreeCleanCard.stringByAppendingString("CAT03")
+        return packThreeCleanCard + "CAT03"
     })
     //  END PACK THREE
     
@@ -73,13 +74,13 @@ func heyInquisitor() {
     
     //mixTheQuestions = (packOne + packTwo + packThree)
     
-    if (defaults.boolForKey("purchasedPackTwo")==true){
-        mixTheQuestions.appendContentsOf(packTwo)
+    if (defaults.bool(forKey: "purchasedPackTwo")==true){
+        mixTheQuestions.append(contentsOf: packTwo)
         print("I added pack two, just fyi")
     }
     
-    if (defaults.boolForKey("purchasedPackThree")==true){
-        mixTheQuestions.appendContentsOf(packThree)
+    if (defaults.bool(forKey: "purchasedPackThree")==true){
+        mixTheQuestions.append(contentsOf: packThree)
         print("I added pack three, just fyi")
     }
     
@@ -99,8 +100,8 @@ func heyInquisitor() {
     // Supporting things
     
     
-    defaults.setInteger(0, forKey: "theQuestionsIndex")
-    defaults.setObject(theQuestions, forKey: "theQuestionsDeck")
+    defaults.set(0, forKey: "theQuestionsIndex")
+    defaults.set(theQuestions, forKey: "theQuestionsDeck")
 
 //    if let testArray:AnyObject? = defaults.objectForKey("theQuestionsDeck") {
 //        var theSavedQuestions = testArray as AnyObject! as! [String]

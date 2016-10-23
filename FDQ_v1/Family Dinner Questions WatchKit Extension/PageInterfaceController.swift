@@ -16,8 +16,8 @@ class PageInterfaceController: WKInterfaceController {
     
     @IBOutlet weak var theQuestionCard: WKInterfaceLabel!
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         if let number = context as? String {
             self.page = number
             theQuestionCard.setText("\(number)")

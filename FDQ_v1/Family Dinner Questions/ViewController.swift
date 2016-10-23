@@ -17,20 +17,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        func updateDeck(notification: NSNotification) {
+        func updateDeck(_ notification: Notification) {
             print("booyakasha")
         }
         
-        func loadList(notification: NSNotification){
+        func loadList(_ notification: Notification){
             //load data here
             print("let's refresh the deck!")
         }
         
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
         // Set a temporary time for Dinner Time if there isn't one set yet.
-        if ((defaults.valueForKey("notifyMeTime")) == nil) {
-            defaults.setValue(NSDate(), forKey: "notifyMeTime")
+        if ((defaults.value(forKey: "notifyMeTime")) == nil) {
+            defaults.setValue(Date(), forKey: "notifyMeTime")
             print("oh hey, I just filled in the temp time")
         }
         
@@ -43,10 +43,10 @@ class ViewController: UIViewController {
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
         
-        if (defaults.boolForKey("notifyMeSwitchState")==true){
+        if (defaults.bool(forKey: "notifyMeSwitchState")==true){
             notifyAtDinnerTime()
         } else {
-            UIApplication.sharedApplication().cancelAllLocalNotifications()
+            UIApplication.shared.cancelAllLocalNotifications()
         }
     }
     
@@ -61,13 +61,13 @@ class ViewController: UIViewController {
         }
     }
 
-    func didPressStart(recognizer: UITapGestureRecognizer) {
+    func didPressStart(_ recognizer: UITapGestureRecognizer) {
         let draggableViewBackground = DraggableViewBackground(frame: self.view.frame)
         self.view.addSubview(draggableViewBackground);
         showCards()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidLoad()
         heyInquisitor()
         removeCards()
