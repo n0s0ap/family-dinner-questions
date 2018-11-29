@@ -14,7 +14,7 @@ let SCALE_STRENGTH = CGFloat(4) //%%% how quickly the card shrinks. Higher = slo
 let SCALE_MAX = CGFloat(0.93) //%%% upper bar for how much the card shrinks. Higher = shrinks less
 let ROTATION_MAX = CGFloat(1) //%%% the maximum rotation allowed in radians.  Higher = card can keep rotating longer
 let ROTATION_STRENGTH = CGFloat(320) //%%% strength of rotation. Higher = weaker rotation
-let ROTATION_ANGLE = CGFloat(M_PI/8) //%%% Higher = stronger rotation angle
+let ROTATION_ANGLE = CGFloat(Double.pi/8) //%%% Higher = stronger rotation angle
 
 
 class DraggableView:UIView{
@@ -72,7 +72,7 @@ class DraggableView:UIView{
         self.addGestureRecognizer(panGestureRecognizer)
     }
     
-    func beingDragged(_ gestureRecognizer: UIPanGestureRecognizer) {
+    @objc func beingDragged(_ gestureRecognizer: UIPanGestureRecognizer) {
         xFromCenter = gestureRecognizer.translation(in: self).x;
         yFromCenter = gestureRecognizer.translation(in: self).y;
         
@@ -90,7 +90,7 @@ class DraggableView:UIView{
                 let rotationAngel = (ROTATION_ANGLE * rotationStrength);
                 
                 //%%% amount the height changes when you move the card up to a certain point
-                let scale = max(1 - fabs(rotationStrength) / SCALE_STRENGTH, SCALE_MAX);
+                let scale = max(1 - abs(rotationStrength) / SCALE_STRENGTH, SCALE_MAX);
                 
                 //%%% move the object's center by center + gesture coordinate
                 self.center = CGPoint(x: self.originalPoint.x + xFromCenter, y: self.originalPoint.y + yFromCenter);
@@ -172,7 +172,7 @@ class DraggableView:UIView{
         } else {
             overlayView?.setMode(.left)
         }
-        overlayView?.alpha = min(fabs(distance)/100, 0.4)
+        overlayView?.alpha = min(abs(distance)/100, 0.4)
     }
     func rightClickAction() {
         rightAction()

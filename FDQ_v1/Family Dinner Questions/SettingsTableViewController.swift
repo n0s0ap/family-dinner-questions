@@ -75,7 +75,7 @@ class SettingsTableViewController: UITableViewController {
     
     
     var datePickerHidden = true
-    let theTimeFromSettings:Date! = UserDefaults.standard.value(forKey: "notifyMeTime") as? Date!
+    let theTimeFromSettings:Date! = UserDefaults.standard.value(forKey: "notifyMeTime") as? Date
 
     
     override func viewDidLoad() {
@@ -92,11 +92,11 @@ class SettingsTableViewController: UITableViewController {
             notifyMeSwitch.isOn = defaults.bool(forKey: "SwitchState")
         }
         
-        notifyMeTime.datePickerMode = UIDatePickerMode.time // 4- use time only
+        notifyMeTime.datePickerMode = UIDatePicker.Mode.time // 4- use time only
         let currentDate = Date()  //5 -  get the current date
         //notifyMeTime.minimumDate = currentDate  //6- set the current date/time as a minimum
        
-        print("I just got the time from settings and it is: \(theTimeFromSettings)")
+        print("I just got the time from settings and it is: \(String(describing: theTimeFromSettings))")
         
         
         if ((defaults.value(forKey: "notifyMeTime")) != nil){

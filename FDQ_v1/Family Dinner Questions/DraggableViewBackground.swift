@@ -12,7 +12,7 @@ import UIKit
 var defaults = UserDefaults.standard
 
 var testArray:AnyObject? = defaults.object(forKey: "theQuestionsDeck") as AnyObject?
-var theSavedQuestions = testArray as AnyObject! as! [String]
+var theSavedQuestions = testArray as AnyObject as! [String]
 
 // var cardsLoadedIndex = defaults.integerForKey("theQuestionsDeckIndex")
 
@@ -81,7 +81,7 @@ addMenuButton()
     func addMenuButton() {
         let settingsButtonImage = UIImage(named: "buttonSettings.png")
         menuButton.frame = CGRect(x: self.frame.width-50, y: 30, width: settingsButtonImage!.size.width, height: settingsButtonImage!.size.height);
-        menuButton.setImage(UIImage(named: "buttonSettings.png"), for: UIControlState())
+        menuButton.setImage(UIImage(named: "buttonSettings.png"), for: UIControl.State())
         addSubview(menuButton)
 //        menuButton.addTarget(self, action: "didPressMenuButton:", forControlEvents: UIControlEvents.TouchUpInside)
     }
@@ -91,7 +91,7 @@ addMenuButton()
     
     func addMessageButton() {
         self.messageButton.frame = CGRect(x: 284, y: 34, width: 18, height: 18)
-        self.messageButton.setImage(UIImage(named: "messageButton"), for: UIControlState())
+        self.messageButton.setImage(UIImage(named: "messageButton"), for: UIControl.State())
         self.addSubview(messageButton)
     }
 //
@@ -124,13 +124,13 @@ addMenuButton()
         if (numLoadedCardsCap > 0) {
             let cardFrame = CGRect(x: (self.frame.size.width - CARD_WIDTH)/2, y: (self.frame.size.height - CARD_HEIGHT)/2, width: CARD_WIDTH, height: CARD_HEIGHT)
             let UpdatedQuestionArray:AnyObject? = defaults.object(forKey: "theQuestionsDeck") as AnyObject?
-            let theUpdatedSavedQuestions = UpdatedQuestionArray as AnyObject! as! [String]
+            let theUpdatedSavedQuestions = UpdatedQuestionArray as AnyObject as! [String]
             
             let UpdatedQuestionLabels = theUpdatedSavedQuestions
             print("I'm going to show you \(theUpdatedSavedQuestions)")
             
             for cardLabel in UpdatedQuestionLabels {
-                let stringLength = cardLabel.characters.count
+                let stringLength = cardLabel.count
                 let substringIndex = stringLength - 5
                 let theCardCat = cardLabel.substring(from: cardLabel.characters.index(cardLabel.startIndex, offsetBy: substringIndex))
                 let stripCardCat = cardLabel.substring(to: cardLabel.characters.index(cardLabel.startIndex, offsetBy: substringIndex))

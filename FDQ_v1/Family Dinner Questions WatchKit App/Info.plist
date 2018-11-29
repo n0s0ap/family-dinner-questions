@@ -28,7 +28,7 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
 	<key>WKCompanionAppBundleIdentifier</key>
-	<string>com.n0s0ap.familydinnerquestions.Family-Dinner-Questions</string>
+	<string>com.n0s0ap.familydinnerqs</string>
 	<key>WKWatchKitApp</key>
 	<true/>
 </dict>
