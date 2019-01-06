@@ -19,7 +19,22 @@ class SettingsTableViewController: UITableViewController {
     
     let defaults = UserDefaults.standard
     
-
+    @IBAction func notifyMeSwitchSaveState(_ sender: UISwitch) {
+        if sender.isOn {
+            defaults.setValue(notifyMeTime.date, forKey: "notifyMeTime")
+            defaults.set(true, forKey: "notifyMeSwitch")
+            let timechanged = DateFormatter.localizedString(from: notifyMeTime.date, dateStyle: DateFormatter.Style.none, timeStyle: DateFormatter.Style.short)
+            print("changed the time to \(timechanged)")
+            datePickerChanged()
+            UIApplication.shared.cancelAllLocalNotifications()
+            notifyAtDinnerTime()
+        } else {
+            UIApplication.shared.cancelAllLocalNotifications()
+            print("Turned off all the notifications")
+            defaults.set(false, forKey: "notifyMeSwitch")
+        }
+    }
+    
     @IBAction func packOneSwitchState(_ sender: UISwitch) {
         
         if sender.isOn {
@@ -81,6 +96,7 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setnotifyMeSwitchSetting()
         self.setPackOneMixSetting()
         self.setPackTwoMixSetting()
         self.setPackThreeMixSetting()
@@ -115,10 +131,18 @@ class SettingsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+  
+    
     }
     
-    
-    
+    fileprivate func setnotifyMeSwitchSetting() {
+        let notifyMeSwitchSetting = defaults.bool(forKey: "notifyMeSwitch")
+        if notifyMeSwitchSetting {
+            self.notifyMeSwitch.setOn(true, animated:true)
+        } else {
+            self.notifyMeSwitch.setOn(false, animated:false)
+        }
+    }
     
     fileprivate func setPackOneMixSetting() {
         let packOneMixSetting = defaults.bool(forKey: "purchasedPackOne")
@@ -182,7 +206,7 @@ class SettingsTableViewController: UITableViewController {
         print("changed the time to \(timechanged)")
         datePickerChanged()
         UIApplication.shared.cancelAllLocalNotifications()
-        notifyAtDinnerTime()
+        //notifyAtDinnerTime()
     }
     
     // MARK: - Table view data source

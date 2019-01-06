@@ -32,15 +32,27 @@ func notifyAtDinnerTime() {
     let date = calendar.date(from: dateComp)
     
     var DayOne: Date?
-    DayOne = calendar.date(byAdding: .minute, value: 1, to: date!)
+    DayOne = calendar.date(byAdding: .day, value: 1, to: date!)
     var DayTwo: Date?
-    DayTwo = calendar.date(byAdding: .minute, value: 2, to: date!)
+    DayTwo = calendar.date(byAdding: .day, value: 2, to: date!)
     var DayThree: Date?
-    DayThree = calendar.date(byAdding: .minute, value: 3, to: date!)
+    DayThree = calendar.date(byAdding: .day, value: 3, to: date!)
     var DayFour: Date?
-    DayFour = calendar.date(byAdding: .minute, value: 4, to: date!)
+    DayFour = calendar.date(byAdding: .day, value: 4, to: date!)
     var DayFive: Date?
-    DayFive = calendar.date(byAdding: .minute, value: 5, to: date!)
+    DayFive = calendar.date(byAdding: .day, value: 5, to: date!)
+    
+//    EVERY MINUTE FOR TESTING
+//    var DayOne: Date?
+//    DayOne = calendar.date(byAdding: .minute, value: 1, to: date!)
+//    var DayTwo: Date?
+//    DayTwo = calendar.date(byAdding: .minute, value: 2, to: date!)
+//    var DayThree: Date?
+//    DayThree = calendar.date(byAdding: .minute, value: 3, to: date!)
+//    var DayFour: Date?
+//    DayFour = calendar.date(byAdding: .minute, value: 4, to: date!)
+//    var DayFive: Date?
+//    DayFive = calendar.date(byAdding: .minute, value: 5, to: date!)
     
 //    let dateFormatter = DateFormatter()
 //    dateFormatter.dateFormat = "dd MM yyyy hh:mm:ss"
