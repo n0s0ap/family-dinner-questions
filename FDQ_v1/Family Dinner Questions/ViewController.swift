@@ -44,8 +44,7 @@ class ViewController: UIViewController {
         self.navigationItem.titleView = imageView
         
         if (defaults.bool(forKey: "notifyMeSwitchState")==true){
-            // notifyAtDinnerTime()
-            notificationSetup()
+            notifyAtDinnerTime()
         } else {
             UIApplication.shared.cancelAllLocalNotifications()
         }
@@ -73,7 +72,7 @@ class ViewController: UIViewController {
         heyInquisitor()
         removeCards()
         showCards()
-        //print("yes, view will appear is working")
+        print("yes, view will appear is working")
     }
     
     override func didReceiveMemoryWarning() {

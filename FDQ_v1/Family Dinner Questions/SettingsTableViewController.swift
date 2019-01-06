@@ -182,8 +182,7 @@ class SettingsTableViewController: UITableViewController {
         print("changed the time to \(timechanged)")
         datePickerChanged()
         UIApplication.shared.cancelAllLocalNotifications()
-        //notifyAtDinnerTime()
-        notificationSetup()
+        notifyAtDinnerTime()
     }
     
     // MARK: - Table view data source
