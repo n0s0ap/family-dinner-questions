@@ -18,6 +18,8 @@ func notifyAtDinnerTime() {
    
     let timecomponents = Calendar.current.dateComponents([.hour, .minute], from: theTimeFromSettings)
     
+    UIApplication.shared.cancelAllLocalNotifications()
+    
     let today = Date()
     let calendar = NSCalendar.current
     let components = calendar.dateComponents([.day, .month, .year], from: today)

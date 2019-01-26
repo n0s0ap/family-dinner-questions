@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         func updateDeck(_ notification: Notification) {
             print("booyakasha")
         }
@@ -27,6 +29,7 @@ class ViewController: UIViewController {
         }
         
         let defaults = UserDefaults.standard
+     
         
         // Set a temporary time for Dinner Time if there isn't one set yet.
         if ((defaults.value(forKey: "notifyMeTime")) == nil) {
@@ -43,11 +46,7 @@ class ViewController: UIViewController {
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
         
-        if (defaults.bool(forKey: "notifyMeSwitchState")==true){
-            notifyAtDinnerTime()
-        } else {
-            UIApplication.shared.cancelAllLocalNotifications()
-        }
+        
     }
     
     func showCards() {
@@ -72,6 +71,14 @@ class ViewController: UIViewController {
         heyInquisitor()
         removeCards()
         showCards()
+        //notifyAtDinnerTime()
+        if (defaults.bool(forKey: "notifyMeSwitch")==true){
+            print("The notify switch is ON")
+            notifyAtDinnerTime()
+        } else {
+            print("The notify switch is OFF")
+            UIApplication.shared.cancelAllLocalNotifications()
+        }
         //print("yes, view will appear is working")
     }
     

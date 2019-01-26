@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C1417E41AF3FDDD0055D6DE /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1417E31AF3FDDD0055D6DE /* SettingsTableViewController.swift */; };
+		5C19048921E9AECE00E788E2 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C19048821E9AECE00E788E2 /* IAPHandler.swift */; };
 		5C3AA4021AEF357C00787EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3AA4011AEF357C00787EA4 /* AppDelegate.swift */; };
 		5C3AA4041AEF357C00787EA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3AA4031AEF357C00787EA4 /* ViewController.swift */; };
 		5C3AA4071AEF357C00787EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C3AA4051AEF357C00787EA4 /* Main.storyboard */; };
@@ -89,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		5C1417E31AF3FDDD0055D6DE /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		5C19048821E9AECE00E788E2 /* IAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHandler.swift; sourceTree = "<group>"; };
 		5C39649F21A11F1D00B5B4E2 /* Family Dinner Questions WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Family Dinner Questions WatchKit App.entitlements"; sourceTree = "<group>"; };
 		5C3AA3FC1AEF357C00787EA4 /* Family Dinner Questions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Family Dinner Questions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C3AA4001AEF357C00787EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		5C3AA3F31AEF357C00787EA4 = {
 			isa = PBXGroup;
 			children = (
+				5C19048821E9AECE00E788E2 /* IAPHandler.swift */,
 				5CF14D1F1B05583B00D2A7FD /* StoreKit.framework */,
 				5C3AA3FE1AEF357C00787EA4 /* Family Dinner Questions */,
 				5C3AA4141AEF357C00787EA4 /* Family Dinner QuestionsTests */,
@@ -185,12 +188,12 @@
 				5C3AA4051AEF357C00787EA4 /* Main.storyboard */,
 				5CF27A5C1AEF5D7100E3A476 /* DraggableView.swift */,
 				5CF27A601AEF5DE800E3A476 /* OverlayView.swift */,
+				5C1417E31AF3FDDD0055D6DE /* SettingsTableViewController.swift */,
 				5CF27A5D1AEF5D7100E3A476 /* DraggableViewBackground.swift */,
 				5C3AA4081AEF357C00787EA4 /* Images.xcassets */,
 				5C3AA40A1AEF357C00787EA4 /* LaunchScreen.xib */,
 				5CF27A661AEF6A8900E3A476 /* KlinicSlabBold.otf */,
 				5C3AA3FF1AEF357C00787EA4 /* Supporting Files */,
-				5C1417E31AF3FDDD0055D6DE /* SettingsTableViewController.swift */,
 				5CD3D0011AFAD4A0008432DB /* theNotifier.swift */,
 				5CF27A641AEF5EC900E3A476 /* questions-basic.plist */,
 				5C873D361B0128D30052E94D /* questions-travel.plist */,
@@ -466,6 +469,7 @@
 				5CF27A5F1AEF5D7100E3A476 /* DraggableViewBackground.swift in Sources */,
 				5CF27A5E1AEF5D7100E3A476 /* DraggableView.swift in Sources */,
 				5CF27A631AEF5E2000E3A476 /* theInquisitor.swift in Sources */,
+				5C19048921E9AECE00E788E2 /* IAPHandler.swift in Sources */,
 				5C3AA4041AEF357C00787EA4 /* ViewController.swift in Sources */,
 				5C3AA4021AEF357C00787EA4 /* AppDelegate.swift in Sources */,
 				5CD3D0021AFAD4A0008432DB /* theNotifier.swift in Sources */,
