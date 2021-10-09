@@ -131,12 +131,15 @@ addMenuButton()
             
             for cardLabel in UpdatedQuestionLabels {
                 let stringLength = cardLabel.count
-                let substringIndex = stringLength - 5
-                let theCardCat = cardLabel.substring(from: cardLabel.characters.index(cardLabel.startIndex, offsetBy: substringIndex))
-                let stripCardCat = cardLabel.substring(to: cardLabel.characters.index(cardLabel.startIndex, offsetBy: substringIndex))
+                // let substringIndex = stringLength - 5
+                //let theCardCat = cardLabel.substring(from: cardLabel.characters.index(cardLabel.startIndex, offsetBy: substringIndex))
+               // let stripCardCat = cardLabel.substring(to: cardLabel.characters.index(cardLabel.startIndex, offsetBy: substringIndex))
+                let theCardCat = cardLabel.suffix(5)
+                let stripCardCat = cardLabel.prefix(stringLength - 5)
+                
                 //var theCardColor = theCardCat
                 let newinformation = stripCardCat
-                let newCard = DraggableView(frame: cardFrame, information: newinformation, color: theCardCat)
+                let newCard = DraggableView(frame: cardFrame, information: String(newinformation), color: String(theCardCat))
                 newCard.delegate = self;
                 allCards.add(newCard)
             }
